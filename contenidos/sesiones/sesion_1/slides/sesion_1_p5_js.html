@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/white_lower.css" id="theme">
 
+
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -23,6 +24,11 @@
 		</script>
 	</head>
 	<body>
+		<!--- Enlaces highlights.js para utilizar bibliteca para imprimir códigos. usar <pre><code>...</pre></code> --->
+		<link rel="stylesheet" href="/path/to/styles/default.css">
+		<script src="/path/to/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<!--- FIN Enlaces biblioteca highlights.js --->
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown>
@@ -65,14 +71,14 @@
 				<section>
 					<h3>Objetivos</h3>
 					<p align="left">
-						<small align="justity">
-							El objetivo general del taller es lograr que a través de un proceso experiencial adquirir los fundamentos de programación.
+						<small align="justify">
+							Objetivo general:
+							<ul>
+							 <li>adquirir fundamentos de programación.</li>
+						 </ul>
 						</small>
 					</p>
 					<p align="left">
-						<!-- <small align="justify">
-							Los objetivos específicos del taller son que los participantes: <b>a)</b> aprendan elementos básicos del lenguaje JavaScript, <b>b)</b> aprendan a programar utilizando la biblioteca <a href="http://p5js.org/">p5.js</a> de la fundación <a href="https://processingfoundation.org/">Processing</a> y <b>c)</b> que desarrollen su creatividad a través de la creación de aplicaciones multimedia/interactivas con p5.js.
-						</small> -->
 						<small align="justify">
 							Los objetivos específicos del taller son que:
 							<ul>
@@ -110,17 +116,41 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							- los computadores no piensan<br>
-							- instrucciones precisas, sin ambigüedad<br>
-
-							<b>'incrustar código de ejemplo 1'</b>
-
+							<li>dar instrucciones a una máquina para que haga lo que tu quieras</li>
+							<ul>
+								<li>computador, celular, arduino, tv, microondas, etc.</li>
+							</ul>
+							<li>las máquinas no piensan</li>
+							<li>instrucciones precisas, sin ambigüedad</li>
+							<li>instrucciones se entregan en un código (?)</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">para qué sirve programar?</h6>
+						<h6 style="text-align:left;">qué es un código?...bueno, esto:</h6>
+					</p>
+
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								function setup(){
+								  createCanvas(200,200);
+								}
+
+								function draw(){
+								  rect(50,50,20,20);
+								}
+							</code>
+						</pre>
+					<p align="right">
+						<small>
+						lo de arriba está escrito en JavaScript!
+					</small>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">pero, para qué sirve programar?</h6>
 					</p>
 				</section>
 				<section>
@@ -129,11 +159,9 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							- biblioteca de JavaScript (qué es JavaScript?)<br>
-							- <a href="https://p5js.org/es">p5js.org</a><br>
-							- <q> "p5.js es una comunidad interesada en la exploración y creación de arte y diseño con tecnología".</q><br>
-							-
-
+							<li>biblioteca de JavaScript (qué es JavaScript?)</li>
+							<li><a href="https://p5js.org/es">p5js.org</a></li>
+							<li><q> "p5.js es una comunidad interesada en la exploración y creación de arte y diseño con tecnología".</q></li>
 						</ul>
 					</p>
 				</section>
@@ -158,18 +186,74 @@
 					<p>
 						<h6 style="text-align:left;">primer código: dibujar un rectángulo (1.1)</h6>
 					</p>
-					<p style="text-align:left;">
-						<code><br>
-							function setup(){<br>
-						  createCanvas(200,200);<br>
-						}<br><br>
-
-							function draw(){<br>
-							  rect(50,50,20,20);<br>
-							}
-							<!-- Aprender a usar https://highlightjs.org/usage/ para incrustar código -->
-						</code>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								function setup(){
+								  createCanvas(200,200);
+								}
+								function draw(){
+								  rect(50,50,20,20);
+								}
+							</code>
+						</pre>
+						<p>
+							aquí quiero incrustar el ejemplo de p5.js, pero aún no sé cómo :(
+						</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">analicemos el ejemplo anterior:</h6>
 					</p>
+					<p>
+						<ul style="float:left;">
+							<li>trabajamos sobre una página html</li>
+							<li>creamos un canvas (lienzo) sobre la página html</li>
+							<li>sobre el lienzo dibujamos</li>
+
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">la página web se vería así:</h6>
+					</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+	  						<meta charset="UTF-8">
+							  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+							  <script language="javascript" type="text/javascript" src="ejemplo_1_1.js"></script>
+							  <style> body {padding: 0; margin: 0;} </style>
+							</code>
+						</pre>
+						<p>
+							<ul style="float:left;">
+								<li>la página web a través del comando <code>script</code> llama a la librería p5.js </li>
+								<li>luego llama el archivo que contiene el ejemplo: <code>ejemplo_1_1.js</code></li>
+								<li>al archivo <code>.js</code> se le llama "sketch" o bosquejo</li>
+							</ul>
+						</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">el sketch se vería así:</h6>
+					</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								function setup(){
+								  createCanvas(200,200);
+								}
+								function draw(){
+								  rect(50,50,20,20);
+								}
+							</code>
+						</pre>
+						<p>
+							<ul style="float:left;">
+								<li>claro, es lo que vimos antes</li>
+								<li>sobre la página html <b>p5.js</b> crea un lienzo: <code>createCanvas();</code></li>
+								<li>sobre el canvas podemos dibujar</li>
+							</ul>
+						</p>
 				</section>
 				<section>
 					<p>
