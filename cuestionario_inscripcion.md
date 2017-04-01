@@ -1,13 +1,13 @@
-<h1>Formulario Inscripción </h1>
+# Formulario Inscripción
 
-<b>Taller de introducción a la programación creativa para jóvenes</b><br><br>
+## Taller de introducción a la programación creativa para jóvenes
 
-Nombre:
+* Nombre:
 
-Edad:
+* Edad:
 
-Qué te motivó a participar del taller?:
+* ¿Por qué quieres tomar este taller?:
 
-Por qué crees que es importante aprender a programar?
+<!-- * ¿Por qué crees que es importante aprender a programar? -->
 
-Desarrollas o te interesa desarrollar actividades artísticas? Música, teatro, danza, artes visuales, performance, otra:
+* Practicas o estás interesad@ en alguna actividades artística (música, actuación, danza, artes visuales, performance, otra)?:
