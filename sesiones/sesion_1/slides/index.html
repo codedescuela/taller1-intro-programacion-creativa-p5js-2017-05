@@ -286,17 +286,107 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Sesión 1</h6>
+						<h6 style="text-align:left;">orden de ejecución del código:</h6>
 					</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								function setup(){
+								  createCanvas(200,200);
+								}
+								function draw(){
+								  rect(50,50,20,20);
+								}
+							</code>
+						</pre>
+						<p>
+							<ul>
+								<li><code>setup()</code> y <code>draw()</code> son funciones. cumplen una función específica</li>
+								<li>la máquina lee el código de izquierda a derecha y de arriba hacia abajo, como nosotros</li>
+							</ul>
+						</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">orden de ejecución del código: función <code>setup()</code></h6>
+					</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								function setup(){
+								  createCanvas(200,200);
+								}
+							</code>
+						</pre>
+						<p>
+							<ul>
+								<li>la función <code>setup()</code> define lo mínimo que la máquina necesita para ejecutar el código</li>
+								<li>en este caso "declara" la creación del canvas (lienzo) a través de <code>createCanvas()</code></li>
+							</ul>
+						</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">orden de ejecución del código: función <code>draw()</code></h6>
+					</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								function draw(){
+								  rect(50,50,20,20);
+								}
+							</code>
+						</pre>
+						<p>
+							<ul>
+								<li>la función <code>draw()</code>dice que todo lo que está entre llaves <code>{}</code> se dibuja</li>
+								<li>en este caso dibujamos un cuadrado</li>
+								<li>después explicaremos lo que está en el paréntesis del <code>rect(50,50,20,20);</code></li>
+							</ul>
+						</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">sintáxis: dos cosas importantes al respecto</h6>
+					</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								function setup(){
+								  createCanvas(200,200);
+								}
+								function draw(){
+								  rect(50,50,20,20);
+								}
+							</code>
+						</pre>
+						<p>
+							<ul>
+								<li>sección de código: es todo lo que está dentro llaves<code>{}</code></li>
+								<li>punto y coma (<code>;</code>):</li>
+								<ul>
+									<li>imprescindibles en javaScript</li>
+									<li>indican el fin de cada línea de código</li>
+								</ul>
+							</ul>
+						</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">formas elementales: cuadrado y círculo</h6>
+					</p>
+							<pre>
+								<code class="hljs" data-trim contenteditable>
+									function setup(){
+									  createCanvas(200,200);
+									}
+									function draw(){
+									  rect(50,50,20,20);
+									}
+								</code>
+							</pre>
+
 					<p>
 						<ul style="float:left;">
-						- editar código<br>
-					  - JavaScript básico 1: sintaxis
-					    <ul>
-								- punto y coma<br>
-					    	- paréntesis (), llaves {}, corchete []
-							</ul>
-						</ul>
+							<li>qué significa lo que está dentro de <code>rect()</code>?</li>
+							<li><a href="http://p5js.org/es/reference/">Referencia de p5.js</a></li>
+						</u>
 					</p>
 				</section>
 				<section>
