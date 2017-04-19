@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>introducción a p5.js - sesión 1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white_lower.css" id="theme">
+
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<!--- Enlaces highlights.js para utilizar bibliteca para imprimir códigos. usar <pre><code>...</pre></code> --->
+		<link rel="stylesheet" href="/path/to/styles/default.css">
+		<script src="/path/to/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<!--- FIN Enlaces biblioteca highlights.js --->
+
+		<!-- COMIENZO PRESENTACIÓN -->
+		<div class="reveal">
+			<div class="slides">
+				<!-- PORTADA TEMPLATE -->
+				<section data-markdown>
+					<script type="text/template">
+					  <h2>Introducción a la programación creativa en p5.js</h2>
+						<br>
+						<h3>Sesión 2</h3>
+						<p>
+							<a href="http://codedescuela.cl/">Coded - Escuela creativa </a><br>
+							<small>Versión 0.0.1 por <a href="https://github.com/gamontec">Guillermo Montecinos</a><small>
+						</p>
+					</script>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Contenidos </h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>JavaScript básico 3 y 4</li>
+							<li>p5.js básico 3 y 4</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Sesión 2</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>JavaScript básico 3: variables</li>
+							<ul>
+								<li>declarar variables</li>
+								<li>qué son las variables?</li>
+								<li>nombres de una variable</li>
+							</ul>
+							<li>JavaScript básico 4: aritmética básica</li>
+							<ul>
+								<li>orden de procedencia</li>
+								<li>operadores</li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+				<p>
+					<h6 style="text-align:left;">Sesión 2</h6>
+				</p>
+				<p>
+					<ul style="float:left;">
+						<li>p5.js básico 3: Color RGB</li>
+						<ul>
+							<li><code>background(), fill(), stroke()</code></li>
+						</ul>
+						<li>p5.js básico 4: variables</li>
+						<ul>
+							<li>variables de p5.js: mouseX, mouseY, height, width</li>
+							<li>figuras en movimiento</li>
+						</ul>
+					</ul>
+				</p>
+				</section>
+				<!-- PÁGINA COMÚN TEMPLATE -->
+				<section>
+					<p>
+						<h6 style="text-align:left;">p5.js: lo que vamos a aprender</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>biblioteca de JavaScript</li>
+							<li><a href="https://p5js.org/es">p5js.org</a></li>
+							<li><q> "p5.js es una comunidad interesada en la exploración y creación de arte y diseño con tecnología".</q></li>
+						</ul>
+					</p>
+				</section>
+				<!-- PÁGINA CON CÓDIGO TEMPLATE -->
+				<section>
+					<p>
+						<h6 style="text-align:left;">la página web se vería así:</h6>
+					</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+	  						<meta charset="UTF-8">
+							  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+							  <script language="javascript" type="text/javascript" src="ejemplo_1_1.js"></script>
+							  <style> body {padding: 0; margin: 0;} </style>
+							</code>
+						</pre>
+						<p>
+							<ul style="float:left;">
+								<li>la página web a través del comando <code>script</code> llama a la biblioteca p5.js </li>
+								<li>luego llama el archivo que contiene el ejemplo: <code>ejemplo_1_1.js</code></li>
+								<li>al archivo <code>.js</code> se le llama "sketch" o bosquejo</li>
+							</ul>
+						</p>
+				</section>
+				<!-- REFERENCIA TEMPLATE-->
+				<section>
+					<p>
+						<h6 style="text-align:left;">Referencias</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+						- <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a>, Daniel Shiffman<br>
+						- <a href="http://p5js.org/es/reference/">referencia p5.js</a><br>
+						- "Make: Getting Started with p5.js", Lauren McCarthy, Casey Reas and Ben Fry. Maker Media, 2015.
+						</ul>
+					</p>
+				</section>
+				<!-- CONTRAPORTADA TEMPLATE -->
+				<section data-markdown>
+					<script type="text/template">
+					  <h2>Introducción a la programación creativa en p5.js</h2>
+						<br>
+						<h3>Sesión [N]</h3>
+						<p>
+							<a href="http://codedescuela.cl/">Coded - Escuela creativa </a><br>
+							<small>Versión 0.0.0 por <a href="https://github.com/gamontec">Guillermo Montecinos</a><small>
+						</p>
+					</script>
+				</section>
+			</div>
+		</div>
+		<!-- FIN PRESENTACIÓN -->
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
