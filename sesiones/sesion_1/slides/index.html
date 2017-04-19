@@ -483,24 +483,66 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>sistema coordenado</li>
-							<li>lienzo transparente</li>
-							<li>ejemplo 1.3 para mostrar que lienzo es transparente</li>
+							<li>mostrar un esquema de un canvas</li>
+							<li>un lienzo es una gran cantidad de puntos o pixeles</li>
+							<li>se ordenan como una matriz, en filas y columnas</li>
+							<li>cada pixel corresponde a un par ordenado <code>(x,y)</code></li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Sesión 1</h6>
+						<h6 style="text-align:left;">funciones (1/2): volvamos al ejemplo 1.2</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							function setup(){
+							  createCanvas(300,200);
+							}
+
+							function draw(){
+							  ellipse(150,100,90,90);
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>el lienzo creado no tiene color</li>
+							<li>qué pasa si le damos un color al canvas?</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">funciones (1/2): color del lienzo (1.3)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							function setup(){
+							  createCanvas(300,200);
+								background(150);
+							}
+
+							function draw(){
+							  ellipse(150,100,90,90);
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>el lienzo creado no tiene color</li>
+							<li>qué pasa si le damos un color al canvas?</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">funciones (1/2): <code>createCanvas()</code></h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-						- p5.js básico 2: funciones 1
-							<ul>
-								- <code>createCanvas()</code>:<br>
-								- qué es un lienzo<br>
-								- sistema de coordenadas
-							</ul>
+							<li>lienzo transparente</li>
+							<li>ejemplo 1.3 para mostrar que lienzo es transparente</li>
 						</ul>
 					</p>
 				</section>
