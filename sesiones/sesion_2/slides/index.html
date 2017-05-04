@@ -112,7 +112,7 @@
 					<p>
 						<ul style="float:left;">
 							<li>Una variable es una porción de memoria del computador que almacena información</li>
-							<li>Existen distintos tipos de variables:</li>
+							<li>Una variable puede almacenar distitnos tipos de información:</li>
 							<ul>
 								<li>Números enteros (int)</li>
 								<li>Números decimales (float)</li>
@@ -131,14 +131,57 @@
 							<li>Debes elegir un nombre para la variable</li>
 							<li>El nombre debe representar la información contenida</li>
 							<li>Si la variable es el radio de un círculo es mejor llamarla <q>radio</q> en vez de <q>r</q></li>
-							<li>Hay nombres que p5.js reserva para sus variables internas</li>
+							<li>Hay nombres que JavaScript y p5.js reservan para sus variables internas</li>
 						</ul>
 					</p>
 				</section>
-
 				<section>
 					<p>
 						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable (2.1)</h6>
+					</p>
+					<p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								function setup(){
+								  createCanvas(480,120);
+								}
+
+								function draw(){
+								  background(204);
+								  rect(150,150,90,90);
+								  ellipse(75, 100, 130, 130);
+								  ellipse(175, 100, 130, 130);
+								  ellipse(275, 100, 130, 130);
+								}
+							</code>
+						</pre>
+					</p>
+					<p>
+						<ul>
+							<li>El ejemplo 2.1 muestra tres círculos traslapados</li>
+							<li>El código es ineficiente. Hay valores que se repiten</li>
+							<li>Para no repetir información podemos usar variables</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable (2.1)</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Declarar</li>
+							<li>Asignar Valor</li>
+							<li>Declarar y Asignar</li>
+							<li>Variables locales y globales</li>
+							<li>Usando ejemplo anterior para derivar en 2.2</li>
+							<li>No duplicar variables</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable (2.2)</h6>
 					</p>
 					<p>
 						<pre>
