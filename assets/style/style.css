@@ -2,18 +2,34 @@
 por aaron montoya-moraga
 abril 2017*/
 
+/*Add fonts*/
+/*@font-face {
+    font-family: 'vag_roundedregular';
+    src: url('vag_roundedregular-webfont.woff2') format('woff2'),
+         url('vag_roundedregular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+@font-face {
+    font-family: 'inconsolata';
+    src: url('inconsolata.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 /*css for paragraphs ("p" elements) and headers ("h" elements)*/
-
 p, h1, h2, h3, h4, h5, h6 {
-    /*set font to Avantgarde*/
-    font-family: Avantgarde;
+    color: black;
+    /*set font to the font wanted*/
+    font-family: 'inconsolata';
     /*normal text, no italics, no bold*/
     font-weight: normal;
     /*centered text*/
-    text-align: center;
+    text-align: left;
     /*display in block*/
-    display: block;
+    display: inline-block;
     /*reset margin and padding for google chrome */
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
@@ -21,11 +37,13 @@ p, h1, h2, h3, h4, h5, h6 {
     -webkit-margin-end: 0;
     -webkit-padding-start: 0;
     /*no padding (inner space of element)*/
-    padding: 0;
+    padding: 1.5%;
     /*margin (outter space of element)*/
     /*first reset, then set actual value wanted*/
-    margin: 0.3em;
+    margin: 0.3em;    
+
 }
+
 
 
 /*css for font sizes of header elements*/
@@ -54,26 +72,37 @@ h6 {
     font-size: 0.67em;
 }
 
-
 /*css for links ("a" elements)*/
 
 a {
     /*reset of format*/
     text-decoration: none;
     /*set font to avantgarde*/
-    font-family: Avantgarde;
+    font-family: 'inconsolata';
     /*set color to black*/
     color: black;
+
+}
+
+h1 {
+
+
+    color: white;
+    background-color: #ED1568;
+
 }
 
 
 /*css for links ("a" elements), when hovering over them*/
 
-a:hover, a *:hover {
+a:hover {
     /*change opacity of link*/
-    opacity: 0.5;
+    background-color: #ED1568;
 }
 
+#myContent a:link {
+    color: #ED1568;
+}
 
 /*css for figure elements*/
 
@@ -81,7 +110,7 @@ figure {
     /*display as block element*/
     display: block;
     /*no padding(inner space of element)*/
-    padding: 0;
+    padding: 50px;
     /*margin (outer space of element)*/
     margin: auto;
 }
@@ -90,7 +119,7 @@ figure {
 /*css for figcaption elements nested under figure elements*/
 
 figure figcaption {
-    font-family: Avantgarde;
+    font-family: 'inconsolata';
     font-weight: normal;
     text-align: center;
     font-size: 100%;
@@ -103,6 +132,7 @@ figure figcaption {
 #myNavMenu {
     width: 100%;
     overflow: auto;
+    padding-bottom: 2%;
 }
 
 
@@ -114,16 +144,23 @@ figure figcaption {
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
-    transition: all 1.0s ease;
+    transition: all 0.5s ease;
 }
 
+#myMain p {
+    padding: 10%;
+    color: white;
+    background-color: #ED1568 ;
+    font-size: 150%;
+    text-align:center;
 
+
+}
 /*css for html element with id coverPictureDiv*/
 
 #coverPictureDiv {
     max-height: 50%;
-    display: block;
-    margin: auto;
+    padding: 50px 0px 20px 0px;
 }
 
 
@@ -133,10 +170,40 @@ figure figcaption {
     display: block;
     margin: auto;
     vertical-align: top;
-    border-radius: 10px;
     max-width: 50%;
     /*max-height: 25%;*/
     height: auto;
+}
+
+#myHeader h2 {
+    text-align: center;
+    display: block;
+    color: black;
+    background-color: white;
+
+}
+
+/*css para el footer*/
+
+footer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+
+}
+
+#myFooter p {
+    padding: 0;
+    text-align: center;
+    color: black;
+    background-color: #efefef;
+
+
+
 }
 
 
