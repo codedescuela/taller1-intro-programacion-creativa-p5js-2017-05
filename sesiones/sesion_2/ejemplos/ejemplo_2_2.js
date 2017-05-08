@@ -1,9 +1,7 @@
-var y;
-var d;
+var y = 100;
+var d = 130;
 
 function setup(){
-  y = 100;
-  d = 130;
   createCanvas(480,120);
 }
 

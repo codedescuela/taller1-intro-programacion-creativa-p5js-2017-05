@@ -166,16 +166,73 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable (2.1)</h6>
+						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Declarar</li>
-							<li>Asignar Valor</li>
-							<li>Declarar y Asignar</li>
-							<li>Variables locales y globales</li>
-							<li>Usando ejemplo anterior para derivar en 2.2</li>
-							<li>No duplicar variables</li>
+							<li>Hay dos etapas en la creación de una variable: <q>declarar</q> y <q>asignar valor</q></li>
+							<li>El nombre de la variable debe ser informativo, supongamos <code>y</code> para la posición y del círculo</li><li>Declaración: <code>var y;</code></li>
+						</ul>
+					</p>
+					<p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								var y;		//Declaración
+								y = 100;	//Asignación de valor
+							</code>
+						</pre>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Al declarar la variable le ordenamos al computador que debe crear una variable con el nombre <code>y</code></li>
+							<li>Al asignar el valor 100 le indicamos que la variable <code>y</code> debe almacenar el número <code>100</code></li>
+							<li>Ambos procesos se pueden hacer en un sólo paso</li>
+						</ul>
+					</p>
+					<p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								var y = 100;	//Declaración y asignación de valor
+							</code>
+						</pre>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables en JavaScript: Buenas prácticas</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Existen <q>variables globales</q> y <q>variables locales</q>. La diferencia la veremos más adelante</li>
+							<li>Siempre elije nombres cortos pero que definan claramente el contenido de la variable</li>
+							<li>Utiliza el formato <q>serpiente-camello</q></li>
+							<ul>
+								<li><code>var radCirculo;</code></li>
+							</ul>
+							<li>No dupliques nombres de variables</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables en JavaScript: Uso de las variables</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Utilizamos la variable <code>y</code> para reemplazar el valor <code>100</code> en las tres elipses</li>
+							<li>Beneficio de usar la variable <code>y</code>:</li>
+							<ul>
+								<li>Si quermeos modificar la posición y de las tres elipses sólo debemos modificar el valor de la variable y</li>
+								<li>Hace más ordenado nuestro código</li>
+							</ul>
+							<li>También podemos crear la variable <code>d</code> para el diámtro de la elipse</li>
 						</ul>
 					</p>
 				</section>
@@ -186,12 +243,10 @@
 					<p>
 						<pre>
 							<code class="hljs" data-trim contenteditable>
-								var y;
-								var d;
+								var y = 100;
+								var d = 130;
 
 								function setup(){
-								  y = 100;
-								  d = 130;
 								  createCanvas(480,120);
 								}
 
@@ -208,26 +263,29 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables en JavaScript</h6>
+						<h6 style="text-align:left;">Variables y movimiento (2.3)</h6>
+					</p>
+					<p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								var x = 0;
+								var d = 130;
+
+								function setup(){
+								  createCanvas(480,200);
+								}
+
+								function draw(){
+								  background(180);
+								  ellipse(x, height/2, d ,d);
+								  x = x + 2;
+								}
+							</code>
+						</pre>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Declaración</li>
-              <li>Scope</li>
-							<li>Nombres</li>
-						</ul>
-					</p>
-				</section>
-				<section>
-					<p>
-						<h6 style="text-align:left;">Variables de p5.js</h6>
-					</p>
-					<p>
-						<ul style="float:left;">
-							<li>height</li>
-							<li>width</li>
-							<li>mouseX</li>
-							<li>mouseY</li>
+              <li>Cada vez que se ejecuta la función <code>draw()</code> la variable <code>x</code> se incrementa en 2</li>
 						</ul>
 					</p>
 				</section>
@@ -237,7 +295,10 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Figuras en movimiento</li>
+              <li>El ejemplo da pie para hablar de operaciones</li>
+							<li>x = x + 1;</li>
+							<li>x++;</li>
+							<li>etc</li>
 						</ul>
 					</p>
 				</section>
@@ -252,6 +313,19 @@
 								<li>Operadores</li>
                 <li>Precedencia</li>
 							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables de p5.js</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>height</li>
+							<li>width</li>
+							<li>mouseX</li>
+							<li>mouseY</li>
 						</ul>
 					</p>
 				</section>
