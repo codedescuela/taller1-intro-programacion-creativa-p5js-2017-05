@@ -291,41 +291,186 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables y movimiento</h6>
+						<h6 style="text-align:left;">Operaciones matemáticas</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-              <li>El ejemplo da pie para hablar de operaciones</li>
-							<li>x = x + 1;</li>
-							<li>x++;</li>
-							<li>etc</li>
-						</ul>
-					</p>
-				</section>
-				<section>
-					<p>
-						<h6 style="text-align:left;">Sesión 2</h6>
-					</p>
-					<p>
-						<ul style="float:left;">
-							<li>JavaScript básico 4: aritmética</li>
+							<li>En el ejemplo anterior sumamos valores</li>
+              <li>En programación, las operaciones matemáticas se representan con los siguientes símbolos:</li>
 							<ul>
-								<li>Operadores</li>
-                <li>Precedencia</li>
+								<li><code>+</code> para <b>sumar</b> dos valores</li>
+								<li><code>-</code> para <b>restar</b> dos valores</li>
+								<li><code>*</code> para <b>multiplicar</b> dos valores</li>
+								<li><code>/</code> para <b>dividir</b> dos valores</li>
+								<li><code>=</code> para <b>asignar</b> un valor a una variable</li>
 							</ul>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables de p5.js</h6>
+						<h6 style="text-align:left;">Operadores matemáticos</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>height</li>
-							<li>width</li>
-							<li>mouseX</li>
-							<li>mouseY</li>
+              <li>En JavaScript existen ciertos operadores matemáticos que resumen operaciones:</li>
+							<ul>
+								<li>"<code>x += 10</code>" representa "<code>x = x + 10</code>"</li>
+								<li>"<code>x -= 51</code>" representa "<code>x = x - 51</code>"</li>
+							</ul>
+							<li>Existen casos especiales para el número 1:</li>
+							<ul>
+								<li>"<code>x ++</code>" representa "<code>x = x + 1</code>"</li>
+								<li>"<code>x --</code>" representa "<code>x = x - 1</code>"</li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables y movimiento (2.3)</h6>
+					</p>
+					<p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								var x = 0;
+								var d = 130;
+
+								function setup(){
+								  createCanvas(480,200);
+								}
+
+								function draw(){
+								  background(180);
+								  ellipse(x, height/2, d ,d);
+								  x += 2;
+								}
+							</code>
+						</pre>
+					</p>
+					<p>
+						<ul style="float:left;">
+              <li>Entonces podemos reescribir el Ejemplo 2.3 utilizando el operador de suma</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Aritmética básica: Orden de procedencia</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>En programación existen reglas tomadas de la matemática para ordenar el cálculo de las operaciones</li>
+							<li>En el siguiente código:</li>
+						</ul>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var gradCels;
+							var gradFahr = 50;
+
+							gradCels = 5/9 * (gradFahr - 32);
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Aritmética básica: Orden de procedencia</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>El orden de procedencia indica que la prioridad de los operadores es el siguiente:</li>
+							<ul>
+								<li><b>Primero</b>, lo que está entre <b>paréntesis</b> (sean curvos, llaves o corchetes)</li>
+								<li><b>Segundo</b>, las <b>multiplicaciones</b> y <b>divisiones</b></li>
+								<li><b>Tercero</b>, las <b>sumas</b> y <b>restas</b></li>
+								<li><b>Cuarto</b>, cuando hay órdenes de procedencia iguales se calcula de izquierda a derecha</li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Aritmética básica: Orden de procedencia</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var gradCels;
+							var gradFahr = 50;
+
+							gradCels = 5/9 * (gradFahr - 32);
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>Luego en el ejemplo el cálculo se realiza en el siguiente orden:</li>
+							<ul>
+								<li><b>Primero</b>, se calcula <code>(gradFahr - 32)</code></li>
+								<li><b>Segundo</b>, se calcula <code>5/9</code></li>
+								<li><b>Tercero</b>, se calcula la multiplicación entre los resultados anteriores</li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables internas de p5.js (2.4)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 130;
+
+							function setup(){
+							  createCanvas(800,500);
+							}
+
+							function draw(){
+							  background(180);
+							  ellipse(mouseX, mouseY, d ,d);
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>Las variables <code>mouseX</code> y <code>mouseY</code> contienen la posición x e y del cursor del mouse</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables internas de p5.js</h6>
+					</p>
+					<p>
+						<ul>
+							<li>Hay dos variables espaciales que almacenan el alto y el ancho del <q>canvas</q></li>
+							<ul style="float:left;">
+								<li><code><b>height</b></code> almacena <b>alto</b></li>
+								<li><code><b>width</b></code> almacena el <b>ancho</b></li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Variables internas de p5.js (2.5)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 130;
+
+							function setup(){
+							  createCanvas(800,500);
+							}
+
+							function draw(){
+							  background(180);
+							  ellipse(mouseX, height/2, d ,d);
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>El Ejemplo 2.5 mezcla las variables espaciales con la posición del mouse</li>
 						</ul>
 					</p>
 				</section>
@@ -383,9 +528,10 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-						- <a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a>, Daniel Shiffman<br>
-						- <a href="http://p5js.org/es/reference/">referencia p5.js</a><br>
-						- "Make: Getting Started with p5.js", Lauren McCarthy, Casey Reas and Ben Fry. Maker Media, 2015.
+							<li><a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a>, Daniel Shiffman<br></li>
+							<li><a href="http://p5js.org/es/reference/">referencia p5.js</a><br></li>
+							<li>"Make: Getting Started with p5.js", Lauren McCarthy, Casey Reas and Ben Fry. Maker Media, 2015.</li>
+							<li>Beginning JavaScript, 4th Edition. Paul Wilton and Jeremy McPeak. Wiley Publishing, 2010.</li>
 						</ul>
 					</p>
 				</section>
