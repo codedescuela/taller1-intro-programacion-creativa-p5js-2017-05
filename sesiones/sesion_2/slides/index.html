@@ -476,32 +476,115 @@
 				</section>
 				<section>
 				<p>
-					<h6 style="text-align:left;">Sesión 2</h6>
+					<h6 style="text-align:left;">Color: RGB</h6>
 				</p>
 				<p>
 					<ul style="float:left;">
-						<li>p5.js básico 3: color RGB</li>
-						<li>mostrar el color con función background</li>
-						<li>explicar RGB 0-255, por qué</li>
-						<li>ejemplos que muestren colores en fondo, en fill en movimiento</li>
+						<li>Para representar el color utilizamos el modelo <b>RGB</b></li>
+						<li>En el modelo <b>RGB</b> cada color se construye a partir de la suma de 3 colores básicos:</li>
 						<ul>
-							<li><code>background(), fill(), stroke()</code></li>
+							<li>Rojo (<q><b>R</b>ed</q>)</li>
+							<li>Verde (<q><b>G</b>reen</q>)</li>
+							<li>Azul (<q><b>B</b>lue</q>)</li>
+						</ul>
+						<li>Cada color puede tener un valor entre 0 - 255</li>
+						<li>La ausencia de color (<b>R</b> = 0, <b>G</b> = 0, <b>B</b> = 0) representa el negro</li>
+						<li>La presencia total de color (<b>R</b> = 255, <b>G</b> = 255, <b>B</b> = 255) representa el negro</li>
+					</ul>
+				</p>
+				</section>
+				<section>
+				<p>
+					<h6 style="text-align:left;">Color: RGB (2.6)</h6>
+				</p>
+				<p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 130;
+
+							function setup(){
+							  createCanvas(800,500);
+							}
+
+							function draw(){
+							  background(230,230,255);
+							  fill(210,0,0);
+							  ellipse(mouseX, mouseY, d ,d);
+							}
+						</code>
+					</pre>
+					<ul style="float:left;">
+						<li>En el Ejmplo 2.4 podemos pintar la elipse de un color rojo y el fondo de un color azul claro</li>
+						<li>La función <code>fill()</code> rellena el interior de la elipse</li>
+					</ul>
+				</p>
+				</section>
+				<section>
+				<p>
+					<h6 style="text-align:left;">Contornos: función <code>stroke()</code></h6>
+				</p>
+				<p>
+					<ul style="float:left;">
+						<li>Stroke en inglés significa trazo, y en p5.js se usa para hablar del contorno de una figura</li>
+						<li>Las funciones de contorno se deben escribir antes de la función que dibuja la figura:</li>
+						<ul>
+							<li><code>noStroke()</code>: elimina el contorno de la figura</li>
+							<li><code>stroke(color)</code>: colorea el contorno de la figura con el color indicado en RGB</li>
+							<li><code>strokeWeight()</code>: define el ancho del contorno</li>
 						</ul>
 					</ul>
 				</p>
 				</section>
 				<section>
 				<p>
-					<h6 style="text-align:left;">Sesión 2</h6>
+					<h6 style="text-align:left;">Contornos: función <code>stroke()</code> (2.8)</h6>
+				</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 130;
+
+							function setup(){
+							  createCanvas(800,500);
+							}
+
+							function draw(){
+							  background(230,230,255);
+							  strokeWeight(6);
+							  stroke(130,0,0);
+							  fill(210,0,0);
+							  ellipse(mouseX, mouseY, d ,d);
+							}
+						</code>
+					</pre>
+				<p>
+					<ul style="float:left;">
+					</ul>
+				</p>
+				</section>
+				<section>
+				<p>
+					<h6 style="text-align:left;">Otras funciones útiles</h6>
 				</p>
 				<p>
 					<ul style="float:left;">
-						<li>p5.js básico 3: color RGB</li>
+						<li>Formas:</li>
 						<ul>
-							<li><code>background(), fill(), stroke()</code></li>
+							<li><code>arc()</code>, dibuja un arco</li>
+							<li><code>ellipse()</code>, dibuja una elipse</li>
+							<li><code>line()</code>, traza una línea</li>
+							<li><code>point()</code>, dibuja un punto</li>
+							<li><code>quad()</code>, dibuja un paralelpípedo</li>
+							<li><code>rect()</code>, dibuja un rectángulo</li>
+							<li><code>triangle()</code>, dibuja un trángulo</li>
 						</ul>
+						<li>Recuerda visitar la <a href="https://p5js.org/reference">referencia de p5.js</a></li>
 					</ul>
 				</p>
+				</section>
+				<section>
+					<p>
+						<h2>y ahora experimentemos!</h2>
+					</p>
 				</section>
 				<!-- REFERENCIA TEMPLATE-->
 				<section>
