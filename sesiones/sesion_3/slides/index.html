@@ -191,7 +191,7 @@
 							<li>La variable <code>i</code> se donimina contador y se inicializa (en este ejemplo) con el valor 0</li>
 							<li>Se evalúa si el contador <code>i</code> es menor que 7, mientras esto se cumpla el <code>for()</code> se seguirá ejecutando</li>
 							<li>El contador <code>i</code> se incrementa en cada ciclo</li>
-							<li>Cuando el contador <code>i</code> deja de ser menor que 8, se termina el <code>for()</code></li>
+							<li>Cuando el contador <code>i</code> deja de ser menor que 7, se termina el <code>for()</code></li>
 						</ul>
 					</p>
 				</section>
@@ -218,7 +218,7 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>) (3.3)</h6>
+						<h6 style="text-align:left;">Ciclos for anidados (3.3)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -243,37 +243,181 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>) (3.3)</h6>
+						<h6 style="text-align:left;">Ciclos for anidados y color aleatorio</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
 							<li>Un <code>for()</code> anidado permite recorrer dos dimensiones y construir una matriz de elipses</li>
-							<li></li>
+							<li>Agreguems color a las elipses y hagamos que cambie aleatoriamente, para ello usaremos dos nuevas funciones:</li>
+							<ul>
+								<li><code>random(a,b)</code> entrega un valor aleatorio equiprobable entre el valor <q>a</q> y el valor <q>b</q></li>
+								<li><code>frameRate()</code> define cuántas veces se ejecuta la función <code>draw()</code> en un segundo</li>
+							</ul>
 						<ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Sesión 3</h6>
+						<h6 style="text-align:left;">Ciclos for anidados (3.3)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 90;     //Diametro de los circulos
+							var numX = 8;   //Cantidad de circulos en el eje horizontal
+							var numY = 5;   //Cantidad de circulos en el eje vertical
+							var red;        //Variable asociada al color rojo
+							var green;      //Variable asociada al color verde
+							var blue;       //Variable asociada al color azul
+
+							function setup(){
+							  createCanvas(800,500);
+							}
+
+							function draw(){
+							  frameRate(7);
+							  background(100);
+							  for (var i = 0; i <= numX; i++) {
+							    for (var j = 0; j <= numY; j++) {
+							      red = random(0,255);
+							      green = random(0,255);
+							      blue = random(0,255);
+
+							      fill(red, green, blue, 150);
+							      ellipse(i*width/numX, j*height/numY, d, d);
+							    }
+							  }
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code></h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-						<li>Dibujar un punto, luego dibujar 5 puntos, luego dibujar muchos puntos con un for.</li>
-						<li>Explicar, definir, sintaxis, for</li>
-						<li>Usar un for</li>
-						<li>Hacer ejemplo de los círculos de mi página</li>
-						<ul>
+							<li>Se utiliza para condicionar una acción al resultado de una prueba lógica <q>(variables booleanas pueden tomar un valor <code>true</code> o <code>false</code>)</q></li>
+							<li>Por ejemplo, siendo <code>a</code> y <code>b</code> variables:</li>
+							<ul>
+							<li>Si <code>a</code> es mayor que <code>b</code> realizar cierta acción</li>
+							<li>Si <code>a</code> es igual a <code>b</code> realizar cierta acción</li>
+							</ul>
+						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Sesión 3</h6>
+						<h6 style="text-align:left;">Condicional <code>if</code>: Sintaxis</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							if(pruebaLogica == true){
+								//Ejecutar Código
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code>: Operadores relacionales</h6>
+					</p>
+					<p>
+						<ul>
+							<li>En JavaScript existen operadores que permiten evaluar la relación entre dos parámatros:</li>
+							<ul>
+								<li><code>a > b</code>, implica que <code>a</code> es mayor que <code>b</code></li>
+								<li><code>a < b</code>, implica que <code>a</code> es menor que <code>b</code></li>
+								<li><code>a >= b</code>, implica que <code>a</code> es mayor igual a <code>b</code></li>
+								<li><code>a <= b</code>, implica que <code>a</code> es menor igual a <code>b</code></li>
+								<li><code>a == b</code>, implica que <code>a</code> es igual a <code>b</code></li>
+								<li><code>a != b</code>, implica que <code>a</code> es distinto de <code>b</code></li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code> (3.5)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var x;
+							var offset = 10;
+
+							function setup(){
+							  createCanvas(800,500);
+							  x = width/2
+							}
+
+							function draw(){
+							  background(204);
+							  if (mouseX > x) {
+							    x += 2;
+							    offset = -10;
+							  }
+							  if (mouseX < x) {
+							    x -= 2;
+							    offset = 10;
+							  }
+							  //Dibujar una flecha hacia la izquierda o derecha dependiendo del offset
+							  line(x, 0, x, height);
+							  line(mouseX, mouseY, mouseX + offset, mouseY - 10);
+							  line(mouseX, mouseY, mouseX + offset, mouseY + 10);
+							  line(mouseX, mouseY, mouseX + offset * 3, mouseY);
+							}
+						</code>
+					</pre>
+					<p style="text-align:right;">
+						<small>Tomado de <q>Make: Getting Started with p5.js</q></small>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code></h6>
+					</p>
+					<p>
+						<ul>
+							<li>Para los casos en que queremos evaluar más de una prueba lógica se puede utilizar los condicionales <code>else-if</code> y <code>else</code></li>
+							<ul>
+								<li><code>else if()</code></li> se utiliza para evaluar una prueba lógica secundaria
+								<li><code>else</code></li> se utiliza para evaluar las pruebas lógicas restantes
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code>: Sintaxis</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							if(pruebaLogica1){
+								//Ejecutar Codigo Prueba Logica 1
+							}
+							else if(pruebaLogica2){
+								//Ejecutar Codigo Prueba Logica 2
+							}
+							else if(pruebaLogica3){
+								//Ejecutar Codigo Prueba Logica 3
+							}
+							else {
+								//Ejecutar Codigo
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>Se puede utilizar cuantos <code>else if()</code></li> sean necesarios
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code></h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-						- JavaScript básico 5: condicionantes if<br>
-						- if click pressed, if dist() menor a algo<br>
-						- operadores <,<=,>,>=,==,!=
+						- ejemplos 5-14 y 5-15 libro McCarthy (74-75)
 						</ul>
 					</p>
 				</section>

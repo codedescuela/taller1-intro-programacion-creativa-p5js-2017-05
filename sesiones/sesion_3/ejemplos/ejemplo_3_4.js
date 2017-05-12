@@ -1,9 +1,9 @@
-var d = 90;
-var numX = 8;
-var numY = 5;
-var red;
-var green;
-var blue;
+var d = 90;     //Diametro de los circulos
+var numX = 8;   //Cantidad de circulos en el eje horizontal
+var numY = 5;   //Cantidad de circulos en el eje vertical
+var red;        //Variable asociada al color rojo
+var green;      //Variable asociada al color verde
+var blue;       //Variable asociada al color azul
 
 function setup(){
   createCanvas(800,500);
@@ -22,5 +22,4 @@ function draw(){
       ellipse(i*width/numX, j*height/numY, d, d);
     }
   }
-
 }
