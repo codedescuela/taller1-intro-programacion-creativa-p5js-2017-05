@@ -181,7 +181,7 @@
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
-							for (var i = 0; i < 8; i++) {
+							for (var i = 0; i < 7; i++) {
 							  //código
 							}
 						</code>
@@ -189,30 +189,67 @@
 					<p>
 						<ul>
 							<li>La variable <code>i</code> se donimina contador y se inicializa (en este ejemplo) con el valor 0</li>
-							<li>Se evalúa si el contador <code>i</code> es menor que 8, mientras esto se cumpla el <code>for()</code> se seguirá ejecutando</li>
-							<li>El contador <code>i</code> se incrementa en 1 a cada ciclo</li>
+							<li>Se evalúa si el contador <code>i</code> es menor que 7, mientras esto se cumpla el <code>for()</code> se seguirá ejecutando</li>
+							<li>El contador <code>i</code> se incrementa en cada ciclo</li>
 							<li>Cuando el contador <code>i</code> deja de ser menor que 8, se termina el <code>for()</code></li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Sesión 3</h6>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>) (3.2)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 130;
+
+							function setup(){
+							  createCanvas(480,240);
+							}
+
+							function draw(){
+							  background(204);
+							  for (var i = 0; i < 7; i++) {
+							    ellipse(65*(1+i), height/2, d, d);
+							  }
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>) (3.3)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 90;
+							var numX = 8;
+							var numY = 5;
+
+							function setup(){
+							  createCanvas(800,500);
+							}
+
+							function draw(){
+							  background(204);
+							  for (var i = 0; i <= numX; i++) {
+							    for (var j = 0; j <= numY; j++) {
+							        ellipse(i*width/numX, j*height/numY, d, d);
+							    }
+							  }
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>) (3.3)</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-						- JavaScript básico 5: bucles for
+							<li>Un <code>for()</code> anidado permite recorrer dos dimensiones y construir una matriz de elipses</li>
+							<li></li>
 						<ul>
-							- para qué siver un bucle?<br>
-							- qué es un bucle for?<br>
-							- cómo declarar un bucle for?
-						</ul>
-						- p5.js básico 5.1: bucles
-						<ul>
-							- declarar un bucle for en p5.js
-						</ul>
-						- p5.js básico 5.2: aplicaciones de bucles
-						</ul>
 					</p>
 				</section>
 				<section>
