@@ -52,9 +52,9 @@
 					<p>
 						<ul style="float:left;">
 							<li>Repaso</li>
-							<li>Cómo subir tu <q>sketch</q> a Github</li>
 							<li>Ciclos <code>for</code></li>
 							<li>Condicional <code>if</code></li>
+							<li>Cómo subir tu <q>sketch</q> a Github</li>
 						</ul>
 					</p>
 				</section>
@@ -66,15 +66,6 @@
 						Ya aprendimos:
 						<ul style="float:left;">
 							<li>Bla!</li>
-						</ul>
-					</p>
-				</section>
-				<section>
-					<p>
-						<h6 style="text-align:left;">Cómo subir tu <q>sketch</q> a GitHub </h6>
-					</p>
-					<p>
-						<ul style="float:left;">
 						</ul>
 					</p>
 				</section>
@@ -337,7 +328,7 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Condicional <code>if</code> (3.5)</h6>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code> (3.5)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -484,11 +475,65 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Condicional <code>if</code></h6>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code> (3.7)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var alto = 130;
+							var ancho = 200;
+							var colorRect;
+
+							function setup(){
+							  createCanvas(800,500);
+							  background(255,150,0,200);
+							}
+
+							function draw(){
+							  if(mouseX > width/2 - ancho/2 && mouseX < width/2 + ancho/2 && mouseY < height/2 + alto/2 &&  mouseY > height/2 - alto/2 ){
+							    colorRect = color(0);
+							  }
+							  else {
+							    colorRect = color(100,100,180);
+							  }
+							  noStroke();
+							  fill(colorRect);
+							  rectMode(CENTER);
+							  rect(width/2,height/2,ancho,alto);
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h2>y ahora experimentemos!</h2>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Cómo subir tu <q>sketch</q> a GitHub </h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-						- ejemplos 5-14 y 5-15 libro McCarthy (74-75)
+							<li>Entra a <a href="https://github.com">github.com</a> e ingresa con tu cuenta</li>
+							<li>Crea un nuevo repositorio con el nombre de tu cuenta y la extensión .github.io. Ejemplo:</li>
+							<ul>
+								<li>Usuario: codedescuela</li>
+								<li>Repo: codedescuela.github.io</li>
+							</ul>
+							<li>Recuerda que el contenido de este repo debe ser público</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Cómo subir tu <q>sketch</q> a GitHub </h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>En la carpeta principal de tu repo sube el archivo <code>index.html</code> junto con tu <q>sketch.js</q></li>
+							<li>Actualiza los cambios (<q>Commit Changes</q>)</li>
+							<li>Escribe en tu buscador el nombre de tu repo (En el ejemplo: codedescuela.github.io)</li>
+							<li>Ya tienes una página web!</li>
 						</ul>
 					</p>
 				</section>
