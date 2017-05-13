@@ -407,7 +407,57 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>Se puede utilizar cuantos <code>else if()</code></li> sean necesarios
+							<li>Se puede utilizar cuantos <code>else if()</code> sean necesarios</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code> (3.6)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var diametro = 150;
+							var distancia = 0;
+							var colorCirculo;
+
+							function setup(){
+							  createCanvas(800,500);
+							  background(255,255,200);
+							}
+
+							function draw(){
+							  distancia = dist(mouseX,mouseY,width/2,height/2);
+							  if(distancia < diametro/2){
+							    colorCirculo = color(150,0,0);
+							  }
+							  else {
+							    colorCirculo = color(255,255,255);
+							  }
+
+							  strokeWeight(4);
+							  fill(colorCirculo);
+							  ellipse(width/2,height/2,diametro,diametro);
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li><code>dist()</code> calcula la distancia entre dos puntos</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Operadores lógicos</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+						<li>En casos en que la prueba lógica se compone de dos o más pruebas se deben usar los operadores lógicos</li>
+						<ul>
+							<li>AND (y):</li>
+							<li>OR (o):</li>
+						</ul>
 						</ul>
 					</p>
 				</section>
