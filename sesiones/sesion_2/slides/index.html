@@ -1,47 +1,51 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>introducción a p5.js - sesión 2</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white_lower.css" id="theme">
+  <title>introducción a p5.js - sesión 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/white_lower.css" id="theme">
 
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<!--- Enlaces highlights.js para utilizar bibliteca para imprimir códigos. usar <pre><code>...</pre></code> --->
-		<link rel="stylesheet" href="/path/to/styles/default.css">
-		<script src="/path/to/highlight.pack.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-		<!--- FIN Enlaces biblioteca highlights.js --->
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
 
-		<!-- COMIENZO PRESENTACIÓN -->
-		<div class="reveal">
-			<div class="slides">
-				<!-- PORTADA TEMPLATE -->
-				<section data-markdown>
-					<script type="text/template">
-					  <h2>Introducción a la programación creativa en p5.js</h2>
-						<br>
-						<h3>Sesión 2</h3>
-						<p>
-							<a href="http://codedescuela.cl/">Coded Escuela</a><br>
-							<small>Versión 0.0.1 por <a href="https://github.com/gamontec">Guillermo Montecinos</a><small>
+<body>
+  <!--- Enlaces highlights.js para utilizar bibliteca para imprimir códigos. usar <pre><code>...</pre></code> --->
+  <link rel="stylesheet" href="/path/to/styles/default.css">
+  <script src="/path/to/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <!--- FIN Enlaces biblioteca highlights.js --->
+
+  <!-- COMIENZO PRESENTACIÓN -->
+  <div class="reveal">
+    <div class="slides">
+      <!-- PORTADA TEMPLATE -->
+      <section data-markdown>
+        <script type="text/template">
+          <h2>Introducción a la programación creativa en p5.js</h2>
+          <br>
+          <h3>Sesión 2</h3>
+          <p>
+            <a href="http://codedescuela.cl/">Coded Escuela</a><br>
+            <small>Versión 0.0.1 por <a href="https://github.com/gamontec">Guillermo Montecinos</a><small>
 						</p>
 					</script>
 				</section>
@@ -53,8 +57,8 @@
 						<ul style="float:left;">
 							<li>Repaso</li>
 							<li>GitHub</li>
-							<li>JavaScript básico 3 y 4</li>
-							<li>p5.js básico 3 y 4</li>
+							<li>JavaScript</li>
+							<li>p5.js</li>
 						</ul>
 					</p>
 				</section>
@@ -101,7 +105,7 @@
 						<ul style="float:left;">
 							<li>Ingresa a <a href="https://github.com/">github.com</a></li>
 							<li>Crea una cuenta con el botón 'sign up'</li>
-							<li>La cuenta la usaremos más adelante</li>
+							<li>Recuerda tu username y password</li>
 						</ul>
 					</p>
 				</section>
@@ -111,34 +115,34 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Una variable es una porción de memoria del computador que almacena información</li>
-							<li>Una variable puede almacenar distitnos tipos de información:</li>
+							<li>Asignan una porción de memoria del computador</li>
+							<li>Pueden almacenar distintos tipos de información:</li>
 							<ul>
 								<li>Números enteros (int)</li>
 								<li>Números decimales (float)</li>
 								<li>Texto (string)</li>
-								<li>Booleano (boolean): variables lógicas, almacenan un valor <b>verdadero</b> (true) o <b>falso</b> (false)</li>
+								<li>Booleano (boolean): <b>verdadero/falso</b> (true/false)</li>
 							</ul>
-							<li>La información almacenada por una variable puede ser modificada muchas veces</li>
+							<li>Podemos hacer variar la información almacenada</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable</h6>
+						<h6 style="text-align:left;">Variables en JavaScript: declaración</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Debes elegir un nombre para la variable</li>
-							<li>El nombre debe representar la información contenida</li>
-							<li>Si la variable es el radio de un círculo es mejor llamarla <q>radio</q> en vez de <q>r</q></li>
-							<li>Hay nombres que JavaScript y p5.js reservan para sus variables internas</li>
+							<li>Las variables deben tener un nombre único</li>
+							<li>Claridad: radio de un círculo, mejor <q>radio</q> que <q>x8z</q></li>
+							<li>Legibilidad: radio de un círculo, mejor <q>radio</q> que <q>r</q></li>
+							<li>Existen nombres reservados en JavaScript y p5.js, que no podemos usar</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable (2.1)</h6>
+						<h6 style="text-align:left;">Variables en JavaScript: declaración (2.1)</h6>
 					</p>
 					<p>
 						<pre>
@@ -159,20 +163,23 @@
 					</p>
 					<p>
 						<ul>
-							<li>El ejemplo 2.1 muestra tres círculos traslapados</li>
-							<li>El código es ineficiente. Hay valores que se repiten</li>
-							<li>Para no repetir información podemos usar variables</li>
+							<li>El ejemplo 2.1 muestra tres elipses traslapadas</li>
+							<li>draw() repite una y otra vez lo mismo</li>
+							<li>Podemos variar en el tiempo usando variables</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable</h6>
+						<h6 style="text-align:left;">Variables en JavaScript: declaración</h6>
 					</p>
 					<p>
-						<ul style="float:left;">
-							<li>Hay dos etapas en la creación de una variable: <q>declarar</q> y <q>asignar valor</q></li>
-							<li>El nombre de la variable debe ser informativo, supongamos <code>y</code> para la posición y del círculo</li><li>Declaración: <code>var y;</code></li>
+
+						<!-- <ul style="float:left;"> -->
+            <ul>
+							<li>Existen dos etapas fundamentales para las variables: <q>declaración</q> y <q>asignación</q></li>
+							<li>El nombre de la variable debe ser claro, supongamos <code>y</code> para la posición y del círculo</li>
+              <li>La declaración ocurre solo una vez, la asignación cuantas veces sea necesario</li>
 						</ul>
 					</p>
 					<p>
@@ -187,13 +194,13 @@
 
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable</h6>
+						<h6 style="text-align:left;">Variables en JavaScript: declaración</h6>
 					</p>
 					<p>
-						<ul style="float:left;">
-							<li>Al declarar la variable le ordenamos al computador que debe crear una variable con el nombre <code>y</code></li>
-							<li>Al asignar el valor 100 le indicamos que la variable <code>y</code> debe almacenar el número <code>100</code></li>
-							<li>Ambos procesos se pueden hacer en un sólo paso</li>
+						<ul>
+							<li>La declaración asigna un espacio en memoria con el nombre dado, (en este caso <code>y</code>)</li>
+							<li>La asignación (en este caso el número 100) le indica a la variable <code>y</code> que ahora su valor es el número <code>100</code></li>
+							<li>Puedes declarar una variable y asignarle un valor en la misma línea de código</li>
 						</ul>
 					</p>
 					<p>
@@ -206,40 +213,41 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables en JavaScript: Buenas prácticas</h6>
+						<h6 style="text-align:left;">Variables en JavaScript: buenas prácticas</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Existen <q>variables globales</q> y <q>variables locales</q>. La diferencia la veremos más adelante</li>
-							<li>Siempre elije nombres cortos pero que definan claramente el contenido de la variable</li>
-							<li>Utiliza el formato <q>serpiente-camello</q></li>
+							<li>Usa nombres cortos, claros y explicativos</li>
+							<li>Usa el formato <q>camello</q></li>
 							<ul>
 								<li><code>var radCirculo;</code></li>
 							</ul>
-							<li>No dupliques nombres de variables</li>
+              <li>Usa <q>variables locales</q> cada vez que sea posible</li>
+              <li>Minimiza el uso de  <q>variables globales</q></li>
 						</ul>
 					</p>
 				</section>
 
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables en JavaScript: Uso de las variables</h6>
+						<h6 style="text-align:left;">Variables en JavaScript: uso</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Utilizamos la variable <code>y</code> para reemplazar el valor <code>100</code> en las tres elipses</li>
-							<li>Beneficio de usar la variable <code>y</code>:</li>
+							<li>Usamos la variable <code>y</code> con valor 100 en las elipses</li>
+							<li>Beneficios de usar la variable <code>y</code>:</li>
 							<ul>
-								<li>Si quermeos modificar la posición y de las tres elipses sólo debemos modificar el valor de la variable y</li>
-								<li>Hace más ordenado nuestro código</li>
+								<li>Fácil modificación de la posición <code>y</code></li>
+								<li>Código fiel nuestra intención: elipses con igual <code>y</code></li>
+                <li>Mayor orden y claridad</li>
 							</ul>
-							<li>También podemos crear la variable <code>d</code> para el diámtro de la elipse</li>
+							<li>Creemos una nueva variable <code>d</code> para el diámetro</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables en JavaScript: Declarar variable (2.2)</h6>
+						<h6 style="text-align:left;">Variables en JavaScript: declaración (2.2)</h6>
 					</p>
 					<p>
 						<pre>
@@ -285,7 +293,7 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-              <li>Cada vez que se ejecuta la función <code>draw()</code> la variable <code>x</code> se incrementa en 2</li>
+              <li>La variable <code>x</code> incrementa en 2 en cada <code>draw()</code> </li>
 						</ul>
 					</p>
 				</section>
@@ -295,8 +303,8 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>En el ejemplo anterior sumamos valores</li>
-              <li>En programación, las operaciones matemáticas se representan con los siguientes símbolos:</li>
+							<li>En el ejemplo anterior usamos suma</li>
+              <li>En programación, podemos usar los siguientes símbolos matemáticos para realizar operaciones:</li>
 							<ul>
 								<li><code>+</code> para <b>sumar</b> dos valores</li>
 								<li><code>-</code> para <b>restar</b> dos valores</li>
@@ -313,12 +321,12 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-              <li>En JavaScript existen ciertos operadores matemáticos que resumen operaciones:</li>
+              <li>Existen atajos para operaciones comunes:</li>
 							<ul>
 								<li>"<code>x += 10</code>" representa "<code>x = x + 10</code>"</li>
 								<li>"<code>x -= 51</code>" representa "<code>x = x - 51</code>"</li>
 							</ul>
-							<li>Existen casos especiales para el número 1:</li>
+							<li>Existen casos especiales para incrementos en 1:</li>
 							<ul>
 								<li>"<code>x ++</code>" representa "<code>x = x + 1</code>"</li>
 								<li>"<code>x --</code>" representa "<code>x = x - 1</code>"</li>
@@ -350,18 +358,17 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-              <li>Entonces podemos reescribir el Ejemplo 2.3 utilizando el operador de suma</li>
+              <li>Podemos reescribir el Ejemplo 2.3 utilizando el operador de suma</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Aritmética básica: Orden de procedencia</h6>
+						<h6 style="text-align:left;">Aritmética: orden de procedencia</h6>
 					</p>
 					<p>
-						<ul style="float:left;">
-							<li>En programación existen reglas tomadas de la matemática para ordenar el cálculo de las operaciones</li>
-							<li>En el siguiente código:</li>
+						<ul>
+							<li>Existen reglas para determinar el orden de las operaciones</li>
 						</ul>
 					</p>
 					<pre>
@@ -375,23 +382,23 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Aritmética básica: Orden de procedencia</h6>
+						<h6 style="text-align:left;">Aritmética: orden de precedencia</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>El orden de procedencia indica que la prioridad de los operadores es el siguiente:</li>
+							<li>El orden de precedencia indica la prioridad de los operadores:</li>
 							<ul>
-								<li><b>Primero</b>, lo que está entre <b>paréntesis</b> (sean curvos, llaves o corchetes)</li>
+								<li><b>Primero</b>, lo que está entre <b>paréntesis</b></li>
 								<li><b>Segundo</b>, las <b>multiplicaciones</b> y <b>divisiones</b></li>
 								<li><b>Tercero</b>, las <b>sumas</b> y <b>restas</b></li>
-								<li><b>Cuarto</b>, cuando hay órdenes de procedencia iguales se calcula de izquierda a derecha</li>
+								<li>A igual precedencia, de izquierda a derecha</li>
 							</ul>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Aritmética básica: Orden de procedencia</h6>
+						<h6 style="text-align:left;">Aritmética: orden de precedencia</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -403,7 +410,7 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>Luego en el ejemplo el cálculo se realiza en el siguiente orden:</li>
+							<li>En el ejemplo ocurre en el siguiente orden:</li>
 							<ul>
 								<li><b>Primero</b>, se calcula <code>(gradFahr - 32)</code></li>
 								<li><b>Segundo</b>, se calcula <code>5/9</code></li>
@@ -414,7 +421,7 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables internas de p5.js (2.4)</h6>
+						<h6 style="text-align:left;">Variables internas de p5.js</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -432,7 +439,7 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>Las variables <code>mouseX</code> y <code>mouseY</code> contienen la posición x e y del cursor del mouse</li>
+							<li>Las variables <code>mouseX</code> y <code>mouseY</code> contienen la posición x e y del ratón</li>
 						</ul>
 					</p>
 				</section>
@@ -442,7 +449,7 @@
 					</p>
 					<p>
 						<ul>
-							<li>Hay dos variables espaciales que almacenan el alto y el ancho del <q>canvas</q></li>
+							<li>Existen dos variables espaciales que almacenan el alto y el ancho del <q>canvas</q></li>
 							<ul style="float:left;">
 								<li><code><b>height</b></code> almacena <b>alto</b></li>
 								<li><code><b>width</b></code> almacena el <b>ancho</b></li>
@@ -452,7 +459,7 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Variables internas de p5.js (2.5)</h6>
+						<h6 style="text-align:left;">Variables internas de p5.js</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -470,7 +477,7 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>El Ejemplo 2.5 mezcla las variables espaciales con la posición del mouse</li>
+							<li>El Ejemplo 2.5 usa las variables del lienzo y de la posición del ratón</li>
 						</ul>
 					</p>
 				</section>
@@ -480,22 +487,22 @@
 				</p>
 				<p>
 					<ul style="float:left;">
-						<li>Para representar el color utilizamos el modelo <b>RGB</b></li>
-						<li>En el modelo <b>RGB</b> cada color se construye a partir de la suma de 3 colores básicos:</li>
+						<li>Modelo aditivo <b>RGB</b> para representar color</li>
+						<li>Cada color es una suma de 3 colores básicos:</li>
 						<ul>
 							<li>Rojo (<q><b>R</b>ed</q>)</li>
 							<li>Verde (<q><b>G</b>reen</q>)</li>
 							<li>Azul (<q><b>B</b>lue</q>)</li>
 						</ul>
-						<li>Cada color puede tener un valor entre 0 - 255</li>
-						<li>La ausencia de color (<b>R</b> = 0, <b>G</b> = 0, <b>B</b> = 0) representa el negro</li>
-						<li>La presencia total de color (<b>R</b> = 255, <b>G</b> = 255, <b>B</b> = 255) representa el negro</li>
+						<li>Cada color toma valores entre 0 y 255</li>
+						<li>Negro = nada (<b>R</b> = 0, <b>G</b> = 0, <b>B</b> = 0)</li>
+						<li>Blanco = todo (<b>R</b> = 255, <b>G</b> = 255, <b>B</b> = 255) </li>
 					</ul>
 				</p>
 				</section>
 				<section>
 				<p>
-					<h6 style="text-align:left;">Color: RGB (2.6)</h6>
+					<h6 style="text-align:left;">Color: RGB</h6>
 				</p>
 				<p>
 					<pre>
@@ -514,30 +521,28 @@
 						</code>
 					</pre>
 					<ul style="float:left;">
-						<li>En el Ejmplo 2.4 podemos pintar la elipse de un color rojo y el fondo de un color azul claro</li>
-						<li>La función <code>fill()</code> rellena el interior de la elipse</li>
+						<li>Pintemos de rojo la elipse y de azul claro el lienzo</li>
+						<li><code>fill()</code> pinta el interior de las figuras</li>
 					</ul>
 				</p>
 				</section>
 				<section>
 				<p>
-					<h6 style="text-align:left;">Contornos: función <code>stroke()</code></h6>
+					<h6 style="text-align:left;">Contornos</h6>
 				</p>
 				<p>
 					<ul style="float:left;">
-						<li>Stroke en inglés significa trazo, y en p5.js se usa para hablar del contorno de una figura</li>
-						<li>Las funciones de contorno se deben escribir antes de la función que dibuja la figura:</li>
 						<ul>
-							<li><code>noStroke()</code>: elimina el contorno de la figura</li>
-							<li><code>stroke(color)</code>: colorea el contorno de la figura con el color indicado en RGB</li>
-							<li><code>strokeWeight()</code>: define el ancho del contorno</li>
+              <li><code>stroke(color)</code>: contorno del color definido</li>
+							<li><code>noStroke()</code>: contorno transparente</li>
+							<li><code>strokeWeight(x)</code>:contorno de ancho x pixeles</li>
 						</ul>
 					</ul>
 				</p>
 				</section>
 				<section>
 				<p>
-					<h6 style="text-align:left;">Contornos: función <code>stroke()</code> (2.8)</h6>
+					<h6 style="text-align:left;">Contornos</h6>
 				</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -567,23 +572,23 @@
 				</p>
 				<p>
 					<ul style="float:left;">
-						<li>Formas:</li>
+						<li>Figuras:</li>
 						<ul>
-							<li><code>arc()</code>, dibuja un arco</li>
-							<li><code>ellipse()</code>, dibuja una elipse</li>
-							<li><code>line()</code>, traza una línea</li>
-							<li><code>point()</code>, dibuja un punto</li>
-							<li><code>quad()</code>, dibuja un paralelpípedo</li>
-							<li><code>rect()</code>, dibuja un rectángulo</li>
-							<li><code>triangle()</code>, dibuja un trángulo</li>
+							<li><code>arc()</code>, arco</li>
+							<li><code>ellipse()</code>, elipse</li>
+							<li><code>line()</code>, línea</li>
+							<li><code>point()</code>, punto</li>
+							<li><code>quad()</code>, cuadrilátero</li>
+							<li><code>rect()</code>, rectángulo</li>
+							<li><code>triangle()</code>, triángulo</li>
 						</ul>
-						<li>Recuerda visitar la <a href="https://p5js.org/reference">referencia de p5.js</a></li>
+						<li><a href="https://p5js.org/reference">Referencia de p5.js</a></li>
 					</ul>
 				</p>
 				</section>
 				<section>
 					<p>
-						<h2>y ahora experimentemos!</h2>
+						<h2>¡a experimentar!</h2>
 					</p>
 				</section>
 				<!-- REFERENCIA TEMPLATE-->
