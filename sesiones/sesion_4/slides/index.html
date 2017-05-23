@@ -1,0 +1,582 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>introducción a p5.js - sesión 3</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white_lower.css" id="theme">
+
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<!--- Enlaces highlights.js para utilizar bibliteca para imprimir códigos. usar <pre><code>...</pre></code> --->
+		<link rel="stylesheet" href="/path/to/styles/default.css">
+		<script src="/path/to/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+		<!--- FIN Enlaces biblioteca highlights.js --->
+
+		<!-- COMIENZO PRESENTACIÓN -->
+		<div class="reveal">
+			<div class="slides">
+				<!-- PORTADA TEMPLATE -->
+				<section data-markdown>
+					<script type="text/template">
+					  <h2>Introducción a la programación creativa en p5.js</h2>
+						<br>
+						<h3>Sesión 3</h3>
+						<p>
+							<a href="http://codedescuela.cl/">Coded Escuela</a><br>
+							<small>Versión 0.0.1 por <a href="https://github.com/gamontec">Guillermo Montecinos</a><small>
+						</p>
+					</script>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Contenidos </h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Repaso</li>
+							<li>Ciclos <code>for</code></li>
+							<li>Condicional <code>if</code></li>
+							<li>Cómo subir tu <q>sketch</q> a Github</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Repaso - Sesión 2</h6>
+					</p>
+					<p style="text-align:left;">
+						Ya aprendimos:
+						<ul style="float:left;">
+							<li>Bla!</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var y = 100;
+							var d = 130;
+
+							function setup(){
+								createCanvas(480,120);
+							}
+
+							function draw(){
+								background(204);
+								ellipse(75, y, d, d);
+								ellipse(175, y, d, d);
+								ellipse(275, y, d, d);
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>En el Ejemplo 2.2 dibujamos 3 elipses superpuestas</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>)</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>¿Qué pasa si queremos dibujar 10 o 20 elipses superpuestas?</li>
+							<li>¿Escribimos 10 veces el código?</li>
+							<li>Modifiquemos un poco el ejemplo anterior, hagamos 7 elipses</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 130;
+
+							function setup(){
+							  createCanvas(480,240);
+							}
+
+							function draw(){
+							  background(204);
+							  ellipse(65, height/2, d, d);
+							  ellipse(130, height/2, d, d);
+							  ellipse(195, height/2, d, d);
+							  ellipse(260, height/2, d, d);
+							  ellipse(325, height/2, d, d);
+							  ellipse(390, height/2, d, d);
+							  ellipse(455, height/2, d, d);
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>): Definición</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Para hacer este tipo de operaciones más eficientes, en JavasCript existen los ciclos</li>
+							<li>Los ciclos ejecutan un bloque de código la cantidad de veces que se desee</li>
+							<li>Hay tres tipo de ciclos:</li>
+							<ul>
+								<li><code>for()</code></li>
+								<li><code>for in()</code></li>
+								<li><code>while()</code></li>
+							</ul>
+							<li>Por ahora solo aprenderemos el <code>for()</code></li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>): Sintaxis</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Para crear un ciclo <code>for()</code> se requieren tres elementos:</li>
+							<ul>
+								<li>Inicialización de contador</li>
+								<li>Testeo de condición de ciclo</li>
+								<li>Incremento de contador</li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>): Sintaxis</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							for (var i = 0; i < 7; i++) {
+							  //código
+							}
+						</code>
+					</pre>
+					<p>
+						<ul>
+							<li>La variable <code>i</code> se donimina contador y se inicializa (en este ejemplo) con el valor 0</li>
+							<li>Se evalúa si el contador <code>i</code> es menor que 7, mientras esto se cumpla el <code>for()</code> se seguirá ejecutando</li>
+							<li>El contador <code>i</code> se incrementa en cada ciclo</li>
+							<li>Cuando el contador <code>i</code> deja de ser menor que 7, se termina el <code>for()</code></li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>) (3.2)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 130;
+
+							function setup(){
+							  createCanvas(480,240);
+							}
+
+							function draw(){
+							  background(204);
+							  for (var i = 0; i < 7; i++) {
+							    ellipse(65*(1+i), height/2, d, d);
+							  }
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for anidados (3.3)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 90;
+							var numX = 8;
+							var numY = 5;
+
+							function setup(){
+							  createCanvas(800,500);
+							}
+
+							function draw(){
+							  background(204);
+							  for (var i = 0; i <= numX; i++) {
+							    for (var j = 0; j <= numY; j++) {
+							        ellipse(i*width/numX, j*height/numY, d, d);
+							    }
+							  }
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for anidados y color aleatorio</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Un <code>for()</code> anidado permite recorrer dos dimensiones y construir una matriz de elipses</li>
+							<li>Agreguems color a las elipses y hagamos que cambie aleatoriamente, para ello usaremos dos nuevas funciones:</li>
+							<ul>
+								<li><code>random(a,b)</code> entrega un valor aleatorio equiprobable entre el valor <q>a</q> y el valor <q>b</q></li>
+								<li><code>frameRate()</code> define cuántas veces se ejecuta la función <code>draw()</code> en un segundo</li>
+							</ul>
+						<ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Ciclos for anidados (3.3)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var d = 90;     //Diametro de los circulos
+							var numX = 8;   //Cantidad de circulos en el eje horizontal
+							var numY = 5;   //Cantidad de circulos en el eje vertical
+							var red;        //Variable asociada al color rojo
+							var green;      //Variable asociada al color verde
+							var blue;       //Variable asociada al color azul
+
+							function setup(){
+							  createCanvas(800,500);
+							}
+
+							function draw(){
+							  frameRate(7);
+							  background(100);
+							  for (var i = 0; i <= numX; i++) {
+							    for (var j = 0; j <= numY; j++) {
+							      red = random(0,255);
+							      green = random(0,255);
+							      blue = random(0,255);
+
+							      fill(red, green, blue, 150);
+							      ellipse(i*width/numX, j*height/numY, d, d);
+							    }
+							  }
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code></h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Se utiliza para condicionar una acción al resultado de una prueba lógica <q>(variables booleanas pueden tomar un valor <code>true</code> o <code>false</code>)</q></li>
+							<li>Por ejemplo, siendo <code>a</code> y <code>b</code> variables:</li>
+							<ul>
+							<li>Si <code>a</code> es mayor que <code>b</code> realizar cierta acción</li>
+							<li>Si <code>a</code> es igual a <code>b</code> realizar cierta acción</li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code>: Sintaxis</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							if(pruebaLogica == true){
+								//Ejecutar Código
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code>: Operadores relacionales</h6>
+					</p>
+					<p>
+						<ul>
+							<li>En JavaScript existen operadores que permiten evaluar la relación entre dos parámatros:</li>
+							<ul>
+								<li><code>a > b</code>, implica que <code>a</code> es mayor que <code>b</code></li>
+								<li><code>a < b</code>, implica que <code>a</code> es menor que <code>b</code></li>
+								<li><code>a >= b</code>, implica que <code>a</code> es mayor igual a <code>b</code></li>
+								<li><code>a <= b</code>, implica que <code>a</code> es menor igual a <code>b</code></li>
+								<li><code>a == b</code>, implica que <code>a</code> es igual a <code>b</code></li>
+								<li><code>a != b</code>, implica que <code>a</code> es distinto de <code>b</code></li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code> (3.5)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var x;
+							var offset = 10;
+
+							function setup(){
+							  createCanvas(800,500);
+							  x = width/2
+							}
+
+							function draw(){
+							  background(204);
+							  if (mouseX > x) {
+							    x += 2;
+							    offset = -10;
+							  }
+							  if (mouseX < x) {
+							    x -= 2;
+							    offset = 10;
+							  }
+							  //Dibujar una flecha hacia la izquierda o derecha dependiendo del offset
+							  line(x, 0, x, height);
+							  line(mouseX, mouseY, mouseX + offset, mouseY - 10);
+							  line(mouseX, mouseY, mouseX + offset, mouseY + 10);
+							  line(mouseX, mouseY, mouseX + offset * 3, mouseY);
+							}
+						</code>
+					</pre>
+					<p style="text-align:right;">
+						<small>Tomado de <q>Make: Getting Started with p5.js</q></small>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code></h6>
+					</p>
+					<p>
+						<ul>
+							<li>Para los casos en que queremos evaluar más de una prueba lógica se puede utilizar los condicionales <code>else-if</code> y <code>else</code></li>
+							<ul>
+								<li><code>else if()</code></li> se utiliza para evaluar una prueba lógica secundaria
+								<li><code>else</code></li> se utiliza para evaluar las pruebas lógicas restantes
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code>: Sintaxis</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							if(pruebaLogica1){
+								//Ejecutar Codigo Prueba Logica 1
+							}
+							else if(pruebaLogica2){
+								//Ejecutar Codigo Prueba Logica 2
+							}
+							else if(pruebaLogica3){
+								//Ejecutar Codigo Prueba Logica 3
+							}
+							else {
+								//Ejecutar Codigo
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>Se puede utilizar cuantos <code>else if()</code> sean necesarios</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code> (3.6)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var diametro = 150;
+							var distancia = 0;
+							var colorCirculo;
+
+							function setup(){
+							  createCanvas(800,500);
+							  background(255,255,200);
+							}
+
+							function draw(){
+							  distancia = dist(mouseX,mouseY,width/2,height/2);
+							  if(distancia < diametro/2){
+							    colorCirculo = color(150,0,0);
+							  }
+							  else {
+							    colorCirculo = color(255,255,255);
+							  }
+
+							  strokeWeight(4);
+							  fill(colorCirculo);
+							  ellipse(width/2,height/2,diametro,diametro);
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li><code>dist()</code> calcula la distancia entre dos puntos</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Operadores lógicos: Definición y sintaxis</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+						<li>En casos en que la prueba lógica se compone de dos o más pruebas se deben usar los operadores lógicos</li>
+						<li>Se utilizan para relacionar dos instancias booleanas <code>true</code> o <code>false</code></li>
+						<ul>
+							<li>AND (y): <code>&&</code></li>
+							<li>OR (o): <code>||</code></li>
+						</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Operadores lógicos</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+						<li>AND:</li>
+						<ul>
+							<li><code>true && true = true</code></li>
+							<li><code>true && false = false</code></li>
+							<li><code>false && false = false</code></li>
+						</ul>
+						<li>OR:</li>
+						<ul>
+							<li><code>true || true = true</code></li>
+							<li><code>true || false = true</code></li>
+							<li><code>false || false = false</code></li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code> (3.7)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var alto = 130;
+							var ancho = 200;
+							var colorRect;
+
+							function setup(){
+							  createCanvas(800,500);
+							  background(255,150,0,200);
+							}
+
+							function draw(){
+							  if(mouseX > width/2 - ancho/2 && mouseX < width/2 + ancho/2 && mouseY < height/2 + alto/2 &&  mouseY > height/2 - alto/2 ){
+							    colorRect = color(0);
+							  }
+							  else {
+							    colorRect = color(100,100,180);
+							  }
+							  noStroke();
+							  fill(colorRect);
+							  rectMode(CENTER);
+							  rect(width/2,height/2,ancho,alto);
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h2>y ahora experimentemos!</h2>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Cómo subir tu <q>sketch</q> a GitHub </h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Entra a <a href="https://github.com">github.com</a> e ingresa con tu cuenta</li>
+							<li>Crea un nuevo repositorio con el nombre de tu cuenta y la extensión .github.io. Ejemplo:</li>
+							<ul>
+								<li>Usuario: codedescuela</li>
+								<li>Repo: codedescuela.github.io</li>
+							</ul>
+							<li>Recuerda que el contenido de este repo debe ser público</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Cómo subir tu <q>sketch</q> a GitHub </h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>En la carpeta principal de tu repo sube el archivo <code>index.html</code> junto con tu <q>sketch.js</q></li>
+							<li>Actualiza los cambios (<q>Commit Changes</q>)</li>
+							<li>Escribe en tu buscador el nombre de tu repo (En el ejemplo: codedescuela.github.io)</li>
+							<li>Ya tienes una página web!</li>
+						</ul>
+					</p>
+				</section>
+				<!-- REFERENCIA TEMPLATE-->
+				<section>
+					<p>
+						<h6 style="text-align:left;">Referencias</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li><a href="https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw">The Coding Train</a>, Daniel Shiffman<br></li>
+							<li><a href="http://p5js.org/es/reference/">referencia p5.js</a><br></li>
+							<li>"Make: Getting Started with p5.js", Lauren McCarthy, Casey Reas and Ben Fry. Maker Media, 2015.</li>
+							<li>Beginning JavaScript, 4th Edition. Paul Wilton and Jeremy McPeak. Wiley Publishing, 2010.</li>
+						</ul>
+					</p>
+				</section>
+			</div>
+		</div>
+		<!-- FIN PRESENTACIÓN -->
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
