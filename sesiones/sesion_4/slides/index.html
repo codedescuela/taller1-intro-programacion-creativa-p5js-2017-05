@@ -251,29 +251,101 @@
 				</section>
 				<section>
 					<p>
-						<h6 align=left>Sesión 4</h6>
+						<h6 align=left>Arreglos: Definición y sintaxis</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-						- JavaScript básico 6: funciones 2
+							<li>Son listas de variables con un nombre común</li>
+							<li>Permiten trabajar con muchas variables creando sólo una</li>
+							<li>La variable <code>x</code> se declara como arreglo de la siguiente manera:</li>
 							<ul>
-							- estructura de una función<br>
-							- funciones que retornan datos<br>
-							- funciones que no retornan datos<br>
-							- declaración de funciones
+								<li><code>var x = [];</code></li>
 							</ul>
+							<li>Un arreglo está compuesto de <i>elementos</i>, y cada elemento tiene in <i>índice</i> (0,1,2...)</li>
+							<li>El primer elemento siempre tiene el número 0</li>
 						</ul>
 					</p>
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Sesión 4</h6>
+							<h6 align=left>Arreglos: Anochecer estrellado (Ejemplo 4.2)</h6>
 						</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								//Arreglos
+								var x = [];
+								var y = [];
+								var diam = [];
+								var numEstrellas = 100;
+
+								function setup(){
+								  createCanvas(800,500);
+								  background(30);
+								  for (var i = 0; i < numEstrellas; i++) {
+								    x[i] = random(0,width);
+								    y[i] = random(0,height);
+								    diam[i] = random(1,7);
+								  }
+
+								}
+
+								function draw(){
+								  for (var i = 0; i < numEstrellas; i++) {
+								    noStroke();
+								    fill(240);
+								    ellipse(x[i],y[i],diam[i],diam[i]);
+								  }
+								}
+							</code>
+						</pre>
 						<p>
 							<ul style="float:left;">
-							- Arreglos
+								<li>Creamos un anochecer estrellado con for y arreglos</li>
 							</ul>
 						</p>
+						</section>
+						<section>
+							<p>
+								<h6 align=left>Arreglos: Seguidor del cursor (Ejemplo 4.3)</h6>
+							</p>
+							<pre>
+								<code class="hljs" data-trim contenteditable>
+									var num = 30;
+									var x = [];
+									var y = [];
+
+									function setup(){
+									  createCanvas(800,500);
+									  noStroke();
+
+									  for (var i = 0; i < num; i++) {
+									    x[i] = 0;
+									    y[i] = 0;
+									  }
+									}
+
+									function draw(){
+									  background(0);
+									  frameRate(100);
+									  for (var i = num-1; i >0 ; i--) {
+									    x[i] = x[i-1];
+									    y[i] = y[i-1];
+									  }
+									  x[0] = mouseX;
+									  y[0] = mouseY;
+
+									  for (var i = 0; i < num; i++) {
+									    fill(255 - i*4);
+									    ellipse(x[i], y[i], 40, 40);
+									  }
+									}
+								</code>
+							</pre>
+							<p>
+								<ul style="float:left;">
+									<li>Otra aplicación de arreglos</li>
+								</ul>
+							</p>
 						</section>
 					<section>
 						<p>
