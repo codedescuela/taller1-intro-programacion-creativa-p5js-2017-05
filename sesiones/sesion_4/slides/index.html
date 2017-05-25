@@ -265,88 +265,126 @@
 							<li>El primer elemento siempre tiene el número 0</li>
 						</ul>
 					</p>
+				</section>
+				<section>
+					<p>
+						<h6 align=left>Arreglos: Anochecer estrellado (Ejemplo 4.2)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							//Arreglos
+							var x = [];
+							var y = [];
+							var diam = [];
+							var numEstrellas = 100;
+
+							function setup(){
+							  createCanvas(800,500);
+							  background(30);
+							  for (var i = 0; i < numEstrellas; i++) {
+							    x[i] = random(0,width);
+							    y[i] = random(0,height);
+							    diam[i] = random(1,7);
+							  }
+
+							}
+
+							function draw(){
+							  for (var i = 0; i < numEstrellas; i++) {
+							    noStroke();
+							    fill(240);
+							    ellipse(x[i],y[i],diam[i],diam[i]);
+							  }
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>Creamos un anochecer estrellado con for y arreglos</li>
+						</ul>
+					</p>
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Arreglos: Anochecer estrellado (Ejemplo 4.2)</h6>
+							<h6 align=left>Arreglos: Seguidor del cursor (Ejemplo 4.3)</h6>
 						</p>
 						<pre>
 							<code class="hljs" data-trim contenteditable>
-								//Arreglos
+								var num = 30;
 								var x = [];
 								var y = [];
-								var diam = [];
-								var numEstrellas = 100;
 
 								function setup(){
 								  createCanvas(800,500);
-								  background(30);
-								  for (var i = 0; i < numEstrellas; i++) {
-								    x[i] = random(0,width);
-								    y[i] = random(0,height);
-								    diam[i] = random(1,7);
-								  }
+								  noStroke();
 
+								  for (var i = 0; i < num; i++) {
+								    x[i] = 0;
+								    y[i] = 0;
+								  }
 								}
 
 								function draw(){
-								  for (var i = 0; i < numEstrellas; i++) {
-								    noStroke();
-								    fill(240);
-								    ellipse(x[i],y[i],diam[i],diam[i]);
+								  background(0);
+								  frameRate(100);
+								  for (var i = num-1; i >0 ; i--) {
+								    x[i] = x[i-1];
+								    y[i] = y[i-1];
+								  }
+								  x[0] = mouseX;
+								  y[0] = mouseY;
+
+								  for (var i = 0; i < num; i++) {
+								    fill(255 - i*4);
+								    ellipse(x[i], y[i], 40, 40);
 								  }
 								}
 							</code>
 						</pre>
 						<p>
 							<ul style="float:left;">
-								<li>Creamos un anochecer estrellado con for y arreglos</li>
+								<li>Otra aplicación de arreglos</li>
 							</ul>
 						</p>
-						</section>
-						<section>
-							<p>
-								<h6 align=left>Arreglos: Seguidor del cursor (Ejemplo 4.3)</h6>
-							</p>
-							<pre>
-								<code class="hljs" data-trim contenteditable>
-									var num = 30;
-									var x = [];
-									var y = [];
-
-									function setup(){
-									  createCanvas(800,500);
-									  noStroke();
-
-									  for (var i = 0; i < num; i++) {
-									    x[i] = 0;
-									    y[i] = 0;
-									  }
-									}
-
-									function draw(){
-									  background(0);
-									  frameRate(100);
-									  for (var i = num-1; i >0 ; i--) {
-									    x[i] = x[i-1];
-									    y[i] = y[i-1];
-									  }
-									  x[0] = mouseX;
-									  y[0] = mouseY;
-
-									  for (var i = 0; i < num; i++) {
-									    fill(255 - i*4);
-									    ellipse(x[i], y[i], 40, 40);
-									  }
-									}
-								</code>
-							</pre>
-							<p>
-								<ul style="float:left;">
-									<li>Otra aplicación de arreglos</li>
+					</section>
+					<section>
+						<p>
+							<h6 align=left>Trabajar con imágenes en p5.js</h6>
+						</p>
+						<p>
+							<ul>
+								<li>p5.js tiene una serie de funciones que permiten cargar imágenes en un <i>sketch</i> con siguientes pasos:</li>
+								<ul>
+									1. Crear una variable que aloje la imagen<br>
+									2. Usar <code>preload()</code> antes de <code>setup()</code> para cargar la imagen antes de comenzar el programa<br>
+									3. En de <code>preload()</code> asignamos la imagen a la variable usando <code>loadImage()</code><br>
+									4. En <code>draw()</code> desplegamos la imagen usando <code>image()</code>
 								</ul>
-							</p>
-						</section>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<p>
+							<h6 align=left>Trabajar con imágenes en p5.js (4.4)</h6>
+						</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								var foto;
+
+								function preload(){
+								  foto = loadImage("coded.png");
+								}
+
+								function setup(){
+								  createCanvas(500,500);
+								}
+
+								function draw(){
+								  image(foto,0,0);
+								}
+							</code>
+						</pre>
+					</section>
 					<section>
 						<p>
 							<h6 align=left>Sesión 4</h6>
