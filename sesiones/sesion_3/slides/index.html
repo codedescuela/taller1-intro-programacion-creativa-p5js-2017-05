@@ -70,7 +70,7 @@
 								<li><code>var x = 10;</code></li>
 							</ul>
 							<li>Operaciones: <code>x++;</code></li>
-							<li>Orden de procedencia</li>
+							<li>Orden de precedencia</li>
 							<li>Variables internas de p5.js:</li>
 							<ul>
 								<li><code>mouseX, mouseY, width, height</code></li>
@@ -81,7 +81,7 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>)</h6>
+						<h6 style="text-align:left;">Bucle <q>for</q></h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -108,13 +108,13 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>)</h6>
+						<h6 style="text-align:left;">Bucle <q>for</q></h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>¿Qué pasa si queremos dibujar 10 o 20 elipses superpuestas?</li>
-							<li>¿Escribimos 10 veces el código?</li>
-							<li>Modifiquemos un poco el ejemplo anterior, hagamos 7 elipses</li>
+							<li>¿Cómo dibujamos 20 elipses superpuestas?</li>
+							<li>¿Escribimos 20 veces el mismo código?</li>
+							<li>Dibujemos 7 elipses en el ejemplo anterior</li>
 						</ul>
 					</p>
 				</section>
@@ -145,40 +145,40 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>): Definición</h6>
+						<h6 style="text-align:left;">Bucle <q>for</q>: definición</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Para hacer este tipo de operaciones más eficientes, en JavasCript existen los ciclos</li>
-							<li>Los ciclos ejecutan un bloque de código la cantidad de veces que se desee</li>
-							<li>Hay tres tipo de ciclos:</li>
+							<li>Bucle: repetición controlada de un bloque de código</li>
+							<li>Los bucles son eficientes y útiles</li>
+							<li>Existen tres sabores de bucles:</li>
 							<ul>
 								<li><code>for()</code></li>
 								<li><code>for in()</code></li>
 								<li><code>while()</code></li>
 							</ul>
-							<li>Por ahora solo aprenderemos el <code>for()</code></li>
+							<li>Empezaremos por aprender el sabor <code>for()</code></li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>): Sintaxis</h6>
+						<h6 style="text-align:left;">Bucle <q>for</q>: sintaxis</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Para crear un ciclo <code>for()</code> se requieren tres elementos:</li>
+							<li>Un bucle <code>for()</code> está compuesto por 3 elementos:</li>
 							<ul>
-								<li>Inicialización de contador</li>
-								<li>Testeo de condición de ciclo</li>
-								<li>Incremento de contador</li>
+								<li>Inicialización</li>
+								<li>Prueba</li>
+								<li>Actualización</li>
 							</ul>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>): Sintaxis</h6>
+						<h6 style="text-align:left;">Bucle <q>for</q>: sintaxis</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -189,16 +189,16 @@
 					</pre>
 					<p>
 						<ul>
-							<li>La variable <code>i</code> se donimina contador y se inicializa (en este ejemplo) con el valor 0</li>
-							<li>Se evalúa si el contador <code>i</code> es menor que 7, mientras esto se cumpla el <code>for()</code> se seguirá ejecutando</li>
-							<li>El contador <code>i</code> se incrementa en cada ciclo</li>
-							<li>Cuando el contador <code>i</code> deja de ser menor que 7, se termina el <code>for()</code></li>
+							<li>Inicialización: variable <code>i</code> es declarada y tiene  valor 0</li>
+							<li>Prueba: si <code>i</code> es menor que 7, el bucle se ejecuta</li>
+							<li>Actualización: <code>i</code> se incrementa en 1</li>
+							<li>Si la prueba no se cumple, termina el bucle <code>for()</code></li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for (<q>for loops</q>) (3.2)</h6>
+						<h6 style="text-align:left;">Bucle <q>for</q> (3.2)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -219,7 +219,7 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for anidados (3.3)</h6>
+						<h6 style="text-align:left;">Bucles <q>for</q> anidados (3.3)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -244,31 +244,31 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for anidados y color aleatorio</h6>
+						<h6 style="text-align:left;">Bucles <q>for</q> anidados (3.3)</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Un <code>for()</code> anidado permite recorrer dos dimensiones y construir una matriz de elipses</li>
-							<li>Agreguems color a las elipses y hagamos que cambie aleatoriamente, para ello usaremos dos nuevas funciones:</li>
+							<li>Con dos bucles <code>for()</code> anidados podemos iterar sobre dos dimensiones</li>
+							<li>Usemos colores aleatorios a las elipses con la ayuda dos nuevas funciones:</li>
 							<ul>
-								<li><code>random(a,b)</code> entrega un valor aleatorio equiprobable entre el valor <q>a</q> y el valor <q>b</q></li>
-								<li><code>frameRate()</code> define cuántas veces se ejecuta la función <code>draw()</code> en un segundo</li>
+								<li><code>random(a,b)</code>: arroja un valor aleatorio equiprobable entre los valores <q>a</q> y <q>b</q></li>
+								<li><code>frameRate(x)</code>: define la cantidad de veces por segundo que la función <code>draw()</code> es ejecutada</li>
 							</ul>
 						<ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Ciclos for anidados (3.3)</h6>
+						<h6 style="text-align:left;">Bucles <q>for</q> anidados (3.3)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
 							var d = 90;     //Diametro de los circulos
 							var numX = 8;   //Cantidad de circulos en el eje horizontal
 							var numY = 5;   //Cantidad de circulos en el eje vertical
-							var red;        //Variable asociada al color rojo
-							var green;      //Variable asociada al color verde
-							var blue;       //Variable asociada al color azul
+							var rojo;       //Variable asociada al color rojo
+							var verde;      //Variable asociada al color verde
+							var azul;       //Variable asociada al color azul
 
 							function setup(){
 							  createCanvas(800,500);
@@ -279,11 +279,11 @@
 							  background(100);
 							  for (var i = 0; i <= numX; i++) {
 							    for (var j = 0; j <= numY; j++) {
-							      red = random(0,255);
-							      green = random(0,255);
-							      blue = random(0,255);
+							      rojo = random(0,255);
+							      verde = random(0,255);
+							      azul = random(0,255);
 
-							      fill(red, green, blue, 150);
+							      fill(rojo, verde, azul, 150);
 							      ellipse(i*width/numX, j*height/numY, d, d);
 							    }
 							  }
@@ -297,53 +297,54 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Se utiliza para condicionar una acción al resultado de una prueba lógica <q>(variables booleanas pueden tomar un valor <code>true</code> o <code>false</code>)</q></li>
-							<li>Por ejemplo, siendo <code>a</code> y <code>b</code> variables:</li>
+							<li>Decide si se ejecuta o no un bloque de código </li>
+							<li>Ejemplos, siendo <code>a</code> y <code>b</code> variables booleanas:</li>
 							<ul>
-							<li>Si <code>a</code> es mayor que <code>b</code> realizar cierta acción</li>
-							<li>Si <code>a</code> es igual a <code>b</code> realizar cierta acción</li>
+							<li>if (a > b): si <code>a</code> es mayor que <code>b</code>, ejecuta</li>
+							<li>if (a == b): si <code>a</code> es igual a <code>b</code>,  ejecuta</li>
 							</ul>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Condicional <code>if</code>: Sintaxis</h6>
+						<h6 style="text-align:left;">Condicional <code>if</code>: sintaxis</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
-							if(pruebaLogica == true){
-								//Ejecutar Código
+							if(condición){
+								//Bloque de código a ser ejecutado
+								//si la condición es verdadera
 							}
 						</code>
 					</pre>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Condicional <code>if</code>: Operadores relacionales</h6>
+						<h6 style="text-align:left;">Condicional <code>if</code>: operadores relacionales</h6>
 					</p>
 					<p>
 						<ul>
-							<li>En JavaScript existen operadores que permiten evaluar la relación entre dos parámatros:</li>
+							<li>En JavaScript existen operadores que permiten evaluar la relación entre dos variables:</li>
 							<ul>
-								<li><code>a > b</code>, implica que <code>a</code> es mayor que <code>b</code></li>
-								<li><code>a < b</code>, implica que <code>a</code> es menor que <code>b</code></li>
-								<li><code>a >= b</code>, implica que <code>a</code> es mayor igual a <code>b</code></li>
-								<li><code>a <= b</code>, implica que <code>a</code> es menor igual a <code>b</code></li>
-								<li><code>a == b</code>, implica que <code>a</code> es igual a <code>b</code></li>
-								<li><code>a != b</code>, implica que <code>a</code> es distinto de <code>b</code></li>
+								<li><code>a > b</code>, <code>a</code> es mayor que <code>b</code></li>
+								<li><code>a < b</code>, <code>a</code> es menor que <code>b</code></li>
+								<li><code>a >= b</code>, <code>a</code> es mayor o igual que <code>b</code></li>
+								<li><code>a <= b</code>, <code>a</code> es menor o igual que <code>b</code></li>
+								<li><code>a == b</code>, <code>a</code> es igual a <code>b</code></li>
+								<li><code>a != b</code>, <code>a</code> es distinto de <code>b</code></li>
 							</ul>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code> (3.5)</h6>
+						<h6 style="text-align:left;">Condicionales <code>if</code> / <code>else if()</code> / <code>else</code> (3.5)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
 							var x;
-							var offset = 10;
+							var desfase = 10;
 
 							function setup(){
 							  createCanvas(800,500);
@@ -354,67 +355,75 @@
 							  background(204);
 							  if (mouseX > x) {
 							    x += 2;
-							    offset = -10;
+							    desfase = -10;
 							  }
 							  if (mouseX < x) {
 							    x -= 2;
-							    offset = 10;
+							    desfase = 10;
 							  }
-							  //Dibujar una flecha hacia la izquierda o derecha dependiendo del offset
+							  //Dibujar una flecha hacia la izquierda o derecha
+								//dependiendo del desfase
 							  line(x, 0, x, height);
-							  line(mouseX, mouseY, mouseX + offset, mouseY - 10);
-							  line(mouseX, mouseY, mouseX + offset, mouseY + 10);
-							  line(mouseX, mouseY, mouseX + offset * 3, mouseY);
+							  line(mouseX, mouseY, mouseX + desfase, mouseY - 10);
+							  line(mouseX, mouseY, mouseX + desfase, mouseY + 10);
+							  line(mouseX, mouseY, mouseX + desfase * 3, mouseY);
 							}
 						</code>
 					</pre>
 					<p style="text-align:right;">
-						<small>Tomado de <q>Make: Getting Started with p5.js</q></small>
+						<small>Basado en <q>Make: Getting Started with p5.js</q></small>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code></h6>
+						<h6 style="text-align:left;">Condicionales <code>if</code> / <code>else if()</code> / <code>else</code></h6>
 					</p>
 					<p>
 						<ul>
-							<li>Para los casos en que queremos evaluar más de una prueba lógica se puede utilizar los condicionales <code>else-if</code> y <code>else</code></li>
+							<li>Condicionales en serie: <code>else-if</code> y <code>else</code></li>
 							<ul>
-								<li><code>else if()</code></li> se utiliza para evaluar una prueba lógica secundaria
-								<li><code>else</code></li> se utiliza para evaluar las pruebas lógicas restantes
+								<li><code>else if(prueba)</code></li> si la condición anterior es <q>false</q>, se prueba esta
+								<li><code>else</code></li> si la condición anterior es  <q>false</q>, se ejecuta esta
 							</ul>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code>: Sintaxis</h6>
+						<h6 style="text-align:left;">Condicionales <code>if</code> / <code>else if()</code> / <code>else</code>: sintaxis</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
 							if(pruebaLogica1){
-								//Ejecutar Codigo Prueba Logica 1
+								//Este bloque se ejecuta solo si
+								//pruebaLogica1 es true
 							}
 							else if(pruebaLogica2){
-								//Ejecutar Codigo Prueba Logica 2
+								//Este bloque se ejecuta solo si
+								//pruebaLogica1 es false y
+								//pruebaLogica2 es true
 							}
 							else if(pruebaLogica3){
-								//Ejecutar Codigo Prueba Logica 3
+								//Este bloque se ejecuta solo si
+								//pruebaLogica1 y pruebaLogica2 son false y
+								//pruebaLogica3 es true
 							}
 							else {
-								//Ejecutar Codigo
+								//Este bloque se ejecuta solo si
+								//pruebaLogica1, pruebaLogica2 y
+								//pruebaLogica3 son false
 							}
 						</code>
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>Se puede utilizar cuantos <code>else if()</code> sean necesarios</li>
+							<li>Podemos usar cuantos <code>else if()</code> queramos</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code> (3.6)</h6>
+						<h6 style="text-align:left;">Condicionales <code>if</code> / <code>else if()</code> / <code>else</code> (3.6)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -450,12 +459,12 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Operadores lógicos: Definición y sintaxis</h6>
+						<h6 style="text-align:left;">Operadores lógicos: uso y sintaxis</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-						<li>En casos en que la prueba lógica se compone de dos o más pruebas se deben usar los operadores lógicos</li>
-						<li>Se utilizan para relacionar dos instancias booleanas <code>true</code> o <code>false</code></li>
+						<li>Permiten crear pruebas lógicas compuestas</li>
+						<li>Sintaxis:</li>
 						<ul>
 							<li>AND (y): <code>&&</code></li>
 							<li>OR (o): <code>||</code></li>
@@ -485,7 +494,7 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Condicional <code>if</code> / <code>else if()</code> / <code>else</code> (3.7)</h6>
+						<h6 style="text-align:left;">Condicionales <code>if</code> / <code>else if()</code> / <code>else</code> (3.7)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -499,7 +508,10 @@
 							}
 
 							function draw(){
-							  if(mouseX > width/2 - ancho/2 && mouseX < width/2 + ancho/2 && mouseY < height/2 + alto/2 &&  mouseY > height/2 - alto/2 ){
+							  if(mouseX > width/2 - ancho/2 &&
+								mouseX < width/2 + ancho/2 &&
+								mouseY < height/2 + alto/2 &&
+								mouseY > height/2 - alto/2 ){
 							    colorRect = color(0);
 							  }
 							  else {
@@ -515,7 +527,7 @@
 				</section>
 				<section>
 					<p>
-						<h2>y ahora experimentemos!</h2>
+						<h2>¡ahora experimentemos!</h2>
 					</p>
 				</section>
 				<section>
@@ -524,13 +536,14 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Entra a <a href="https://github.com">github.com</a> e ingresa con tu cuenta</li>
-							<li>Crea un nuevo repositorio con el nombre de tu cuenta y la extensión .github.io. Ejemplo:</li>
+							<li>Ingresa a <a href="https://github.com">github.com</a> con tu cuenta</li>
+							<li>Crea un nuevo repositorio con el nombre <q>x</q>.github.io, reemplazando x con tu usuario:</li>
 							<ul>
 								<li>Usuario: codedescuela</li>
 								<li>Repo: codedescuela.github.io</li>
 							</ul>
-							<li>Recuerda que el contenido de este repo debe ser público</li>
+							<li>Haz tu repo público, no privado</li>
+							<li>Marca la casilla para iniciar con un archivo README</li>
 						</ul>
 					</p>
 				</section>
@@ -540,10 +553,13 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>En la carpeta principal de tu repo sube el archivo <code>index.html</code> junto con tu <q>sketch.js</q></li>
-							<li>Actualiza los cambios (<q>Commit Changes</q>)</li>
-							<li>Escribe en tu buscador el nombre de tu repo (En el ejemplo: codedescuela.github.io)</li>
-							<li>Ya tienes una página web!</li>
+							<li>Ingresa a tu repo en <a href="https://github.com">github.com</a></li>
+							<li>Click en "Upload files" para subir archivos</li>
+							<li>Añade los archivos <code>index.html</code> y <q>sketch.js</q></li>
+							<li>Click en "Commit changes" para guardar</li>
+							<li>En el navegador abre la página de tu repo</li></li>
+							<li>En el ejemplo: codedescuela.github.io</li>
+							<li>¡Ya tienes una página web!</li>
 						</ul>
 					</p>
 				</section>
