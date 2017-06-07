@@ -382,7 +382,7 @@
 							<code class="hljs" data-trim contenteditable>
 								var foto;
 
-								function preload(){
+								function preload(){	//Esta función asegura que la foto se cargue antes de que comience el programa
 								  foto = loadImage("coded.png");
 								}
 
@@ -413,16 +413,94 @@
 					</section>
 					<section>
 						<p>
+							<h6 align=left>Trabajar con imágenes: Responsividad</h6>
+						</p>
+						<p>
+							<ul style="float:left;">
+								<li>Podemos modificar parámetros parámetros de una imagen como el tamaño o la transparencia</li>
+								<li>La función <code>image(foto,x1,y1,x2,y2)</code> dibuja el archivo indicado entre un par ordenado y otro</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<p>
+							<h6 align=left>Trabajar con imágenes: Responsividad (4.5)</h6>
+						</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								var foto;
+
+								function preload(){
+								  foto = loadImage("coded.png");
+								}
+
+								function setup(){
+								  createCanvas(500,500);
+								}
+
+								function draw(){
+								  background(255);
+								  image(foto,0,0,mouseX,mouseY);
+								}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p>
+							<h6 align=left>Trabajar con imágenes: Responsividad (4.6)</h6>
+						</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								var foto;
+
+								function preload(){
+								  foto = loadImage("pinera.gif");
+								}
+
+								function setup(){
+								  createCanvas(800,700);
+								}
+
+								function draw(){
+								  background(204);
+								  image(foto,mouseX-foto.width/2,mouseY-foto.height/2);
+
+								}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<p>
+							<h6 align=left>Trabajar con texto</h6>
+						</p>
+						<pre>
+							<code class="hljs" data-trim contenteditable>
+								function setup(){
+								  createCanvas(600,100);
+								  textFont("Arial");
+								}
+
+								function draw(){
+								  background(220);
+								  textSize(32);
+								  text("Taller de p5.js para cabros bacanes",0,50);
+								}
+							</code>
+						</pre>
+						<p>
+							<ul>
+								<li><code>textFont("Arial")</code> carga la fuente del texto</li>
+								<li><code>textSize(32)</code> define el tamaño del texto</li>
+								<li><code>text("bla bla bla")</code> escribe el texto</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<p>
 							<h6 align=left>Sesión 4</h6>
 						</p>
 						<p>
 							<ul>
-							- p5.js básico 6: medios
-								<ul>
-									- responsividad en parámetros de una imagen<br>
-									- asincronicidad<br>
-									- texto y tipografías
-								</ul>
 							- p5.js básico 7 (bonus): captura de video
 								<ul>
 									- <code>createCapture()</code>
