@@ -471,7 +471,7 @@
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Trabajar con texto</h6>
+							<h6 align=left>Trabajar con texto (4.7)</h6>
 						</p>
 						<pre>
 							<code class="hljs" data-trim contenteditable>
@@ -497,16 +497,57 @@
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Sesión 4</h6>
+							<h6 align=left>Trabajar con video en p5.js</h6>
 						</p>
 						<p>
 							<ul>
-							- p5.js básico 7 (bonus): captura de video
-								<ul>
-									- <code>createCapture()</code>
-								</ul>
+								<li>Además de trabajar con fotografías, p5.js permite trabajar con video</li>
+								<li>Cuenta con funciones que permiten capturar imágenes de tu cámara integrada y desplegarlas</li>
 							</ul>
 						</p>
+				</section>
+				<section>
+					<p>
+						<h6 align=left>Trabajar con video (4.8)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							var camara;
+
+							function setup(){
+							  createCanvas(800,500);
+							  camara = createCapture(VIDEO);
+							  camara.hide();
+							}
+
+							function draw(){
+							  image(camara,0,0);
+							}
+						</code>
+					</pre>
+					<p>
+						<ul>
+							<li>Podemos invertir los colores usando <code>filter(INVERT);</code></li>
+							<li>Usando <code>tint(color);</code> podemos teñir la imagen</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 align=left>Proyecto Final</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li><b>Hagamos algo entretenido para terminar el curso?</b></li>
+							<li>Queremos que el curso te deje algo más allá de conocimiento</li>
+							<ul>
+								<i><b>Puede ser tu primera obra de arte... o tu primer videojuego</b></i>
+							</ul>
+							<li>Durante la semana piensa en <b>qué te gustaría hacer</b></li>
+							<li>Puede ser <b>solo o colaborando</b>, somos una comunidad de amigos</li>
+							<li>Los proyectos serán expuestos en nuestra web!</li>
+						</ul>
+					</p>
 				</section>
 				<!-- REFERENCIA TEMPLATE-->
 				<section>
