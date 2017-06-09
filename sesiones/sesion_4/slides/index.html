@@ -47,7 +47,7 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Contenidos </h6>
+						<h6 style="text-align:left;">Contenidos</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
@@ -72,11 +72,11 @@
 					<p style="text-align:left;">
 						Ya aprendimos:
 						<ul style="float:left;">
-							<li>Sintaxis y uso de los ciclos for</li>
+							<li>Sintaxis y uso de los bucles for</li>
 							<li>Condicional <code>if()</code> / <code>else if()</code> / <code>else</code></li>
 							<li>Operadores relacionales</li>
 							<li>Operadores lógicos</li>
-							<li>Cómo subir tu <i>sketch</i> Github</li>
+							<li>Subir proyectos a GitHub</li>
 						</ul>
 					</p>
 				</section>
@@ -86,25 +86,22 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Son secciones de código que ejecutan una tarea específica</li>
-							<li>Algunas funciones requieren argumentos y otras no</li>
-							<li>Hay funciones que retornan valores y otras que no</li>
+							<li>Bloque de código que ejecuta una tarea</li>
+							<li>Pueden requerir argumentos</li>
+							<li>Pueden retornar valores</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 align=left>Funciones: Sintaxis</h6>
+						<h6 align=left>Funciones: sintaxis</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
-							function nombreFuncion(argumentoFunction){
-								instruccion1;
-								instruccion2;
-								.
-								.
-								.
-								instruccionN;
+							function nombreFuncion(argumentoFuncion){
+								//instruccion1;
+								//instruccion2;
+								///etc
 
 								return valorRetorno;
 							}
@@ -112,26 +109,26 @@
 					</pre>
 					<p>
 						<ul>
-							<li>El comando <code>function</code> declara la función</li>
-							<li>El comando <code>return</code> el resultado de la función (en el caso que sea necesario)</li>
+							<li>La palabra clave <code>function</code> declara la función</li>
+							<li>La palabra clave <code>return</code> retorna el resultado</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 align=left>Funciones: Uso y buenas prácticas</h6>
+						<h6 align=left>Funciones: uso y buenas prácticas</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
 							<li>Usos:</li>
 							<ul>
-								<li>Le dan orden y jerarquía al código</li>
-								<li>Permiten trabajar de manera modular</li>
+								<li>Ordenar y dar estructura al código</li>
+								<li>Modularizar el código</li>
 							</ul>
 							<li>Buenas prácticas:</li>
 							<ul>
-								<li>Elige nombres simples, como <code>getFecha()</code></li>
-								<li>Planifica tu código pensando en las funciones, luego diseña cada función</li>
+								<li>Nombres simples y claros, como <code>getFecha()</code></li>
+								<li>Diseño top-down: 1. escribe tu código pensando en funciones, 2.  escribe cada función</li>
 							</ul>
 						</ul>
 					</p>
@@ -167,7 +164,7 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>Podemos reorganizar el ejemplo 3.7</li>
+							<li>Reescribamos el ejemplo 3.7 usando funciones</li>
 						</ul>
 					</p>
 				</section>
@@ -193,8 +190,8 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>La primera parte de <code>draw()</code> decide en cada ciclo si el cursor está dentro del rectángulo</li>
-							<li>La segunda parte actualiza el rectángulo</li>
+							<li><code>draw()</code> verifica si el cursor está en el rectángulo</li>
+							<li>Después actualiza el rectángulo</li>
 						</ul>
 					</p>
 				</section>
@@ -242,7 +239,7 @@
 							  updateRect();
 							}
 
-							function checkInside(){ //Revisa si el cursor está dentro o fuera del rectángulo
+							function checkInside(){//verifica si el cursor está dentro o fuera del rectángulo
 							  if(mouseX > width/2 - ancho/2 && mouseX < width/2 + ancho/2 && mouseY < height/2 + alto/2 &&  mouseY > height/2 - alto/2 ){
 							    colorRect = color(0);
 							  }
@@ -251,7 +248,7 @@
 							  }
 							}
 
-							function updateRect(){ //Actualiza el rectángulo en cada ciclo
+							function updateRect(){ //actualiza el rectángulo
 							  noStroke();
 							  fill(colorRect);
 							  rectMode(CENTER);
@@ -262,24 +259,22 @@
 				</section>
 				<section>
 					<p>
-						<h6 align=left>Arreglos: Definición y sintaxis</h6>
+						<h6 align=left>Arreglos: definición y sintaxis</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Son listas de variables con un nombre común</li>
-							<li>Permiten trabajar con muchas variables creando sólo una</li>
-							<li>La variable <code>x</code> se declara como arreglo de la siguiente manera:</li>
+							<li>Conjunto ordenado de elementos con un nombre</li>
+              <li>Los elementos están indexados en 0</li>
+							<li>Para declarar un arreglo <code>x</code>:</li>
 							<ul>
 								<li><code>var x = [];</code></li>
 							</ul>
-							<li>Un arreglo está compuesto de <i>elementos</i>, y cada elemento tiene in <i>índice</i> (0,1,2...)</li>
-							<li>El primer elemento siempre tiene el número 0</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 align=left>Arreglos: Noche estrellada (Ejemplo 4.2)</h6>
+						<h6 align=left>Arreglos: noche estrellada (Ejemplo 4.2)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -311,7 +306,7 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>Creamos una noche estrellada usando for y arreglos</li>
+							<li>Usamos for y arreglos</li>
 						</ul>
 					</p>
 					</section>
@@ -352,37 +347,31 @@
 								}
 							</code>
 						</pre>
-						<p>
-							<ul style="float:left;">
-								<li>Otra aplicación de arreglos</li>
-							</ul>
-						</p>
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Trabajar con imágenes en p5.js</h6>
+							<h6 align=left>Imágenes en p5.js</h6>
 						</p>
 						<p>
 							<ul>
-								<li>p5.js tiene una serie de funciones que permiten cargar imágenes en un <i>sketch</i> con siguientes pasos:</li>
+								<li>para cargar imágenes en un <i>sketch</i> de p5.js:</li>
 								<ul>
-									1. Crear una variable que aloje la imagen<br>
-									2. Usar <code>preload()</code> antes de <code>setup()</code> para cargar la imagen antes de comenzar el programa<br>
-									3. En de <code>preload()</code> asignamos la imagen a la variable usando <code>loadImage()</code><br>
-									4. En <code>draw()</code> desplegamos la imagen usando <code>image()</code>
+									1. Crear una variable que almacene la imagen<br>
+									2. Cargar la imagen en <code>preload()</code>, usando <code>loadImage()</code> y la variable creada<br>
+									3. Poner la imagen en el lienzo usando <code>image()</code>
 								</ul>
 							</ul>
 						</p>
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Trabajar con imágenes en p5.js (4.4)</h6>
+							<h6 align=left>Imágenes en p5.js (4.4)</h6>
 						</p>
 						<pre>
 							<code class="hljs" data-trim contenteditable>
 								var foto;
 
-								function preload(){	//Esta función asegura que la foto se cargue antes de que comience el programa
+								function preload(){	//preload() es ejecutado antes de setup()
 								  foto = loadImage("coded.png");
 								}
 
@@ -398,33 +387,33 @@
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Trabajar con imágenes en p5.js (4.4)</h6>
+							<h6 align=left>Imágenes en p5.js</h6>
 						</p>
 						<p>
 							<ul style="float:left;">
-								<li>Los navegadores con protocolos de seguridad como Chrome no permiten cargar la imagenen en el <i>sketch</i> a menos que esté en un servidor seguro</li>
-								<li>Hay dos opciones</li>
+								<li>Los protocolos de seguridad de los navegadores no permiten cargar archivos externos, como la imagen</li>
+								<li> Veremos dos opciones:</li>
 								<ul>
-									<li>Sube tu <code>sketch.js</code> junto con su <code>index.html</code> a Github pages, o</li>
-									<li>Utiliza el <a href="https://alpha.editor.p5js.org/">editor online de p5.js</a></li>
+									<li>Subir tu proyecto a GitHub Pages</li>
+									<li>Utilizar el <a href="https://alpha.editor.p5js.org/">editor online de p5.js</a></li>
 								</ul>
 							</ul>
 						</p>
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Trabajar con imágenes: Responsividad</h6>
+							<h6 align=left>Imágenes en p5.js: responsividad</h6>
 						</p>
 						<p>
 							<ul style="float:left;">
-								<li>Podemos modificar parámetros parámetros de una imagen como el tamaño o la transparencia</li>
-								<li>La función <code>image(foto,x1,y1,x2,y2)</code> dibuja el archivo indicado entre un par ordenado y otro</li>
+								<li>Modificación de parámetros de una imagen: tamaño, transparencia</li>
+								<li><code>image(foto,x1,y1,x2,y2)</code> dibuja el archivo entre un par ordenado y otro</li>
 							</ul>
 						</p>
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Trabajar con imágenes: Responsividad (4.5)</h6>
+							<h6 align=left>Trabajar con imágenes: responsividad (4.5)</h6>
 						</p>
 						<pre>
 							<code class="hljs" data-trim contenteditable>
@@ -447,7 +436,7 @@
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Trabajar con imágenes: Responsividad (4.6)</h6>
+							<h6 align=left>Trabajar con imágenes: responsividad (4.6)</h6>
 						</p>
 						<pre>
 							<code class="hljs" data-trim contenteditable>
@@ -471,7 +460,7 @@
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Trabajar con texto (4.7)</h6>
+							<h6 align=left>Trabajo con texto (4.7)</h6>
 						</p>
 						<pre>
 							<code class="hljs" data-trim contenteditable>
@@ -497,18 +486,18 @@
 					</section>
 					<section>
 						<p>
-							<h6 align=left>Trabajar con video en p5.js</h6>
+							<h6 align=left>Trabajo con video en p5.js</h6>
 						</p>
 						<p>
 							<ul>
-								<li>Además de trabajar con fotografías, p5.js permite trabajar con video</li>
-								<li>Cuenta con funciones que permiten capturar imágenes de tu cámara integrada y desplegarlas</li>
+								<li>p5.js también permite trabajar con video</li>
+								<li>Permite capturar y mostrar desde tu cámara</li>
 							</ul>
 						</p>
 				</section>
 				<section>
 					<p>
-						<h6 align=left>Trabajar con video (4.8)</h6>
+						<h6 align=left>Trabajo con video en p5.js (4.8)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -527,8 +516,8 @@
 					</pre>
 					<p>
 						<ul>
-							<li>Podemos invertir los colores usando <code>filter(INVERT);</code></li>
-							<li>Usando <code>tint(color);</code> podemos teñir la imagen</li>
+							<li>Invertir los colores: <code>filter(INVERT);</code></li>
+							<li>Teñir la imagen: <code>tint(color);</code></li>
 						</ul>
 					</p>
 				</section>
@@ -538,14 +527,14 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li><b>Hagamos algo entretenido para terminar el curso?</b></li>
-							<li>Queremos que el curso te deje algo más allá de conocimiento</li>
+							<li><b>Actividad entretenida para terminar el curso</b></li>
+							<li>Queremos que hagas tu propio proyecto</li>
 							<ul>
-								<i><b>Puede ser tu primera obra de arte... o tu primer videojuego</b></i>
+								<i><b>Tu primera obra de arte,  tu primer videojuego</b></i>
 							</ul>
-							<li>Durante la semana piensa en <b>qué te gustaría hacer</b></li>
-							<li>Puede ser <b>solo o colaborando</b>, somos una comunidad de amigos</li>
-							<li>Los proyectos serán expuestos en nuestra web!</li>
+							<li>Durante la semana piensa <b>qué te gustaría hacer</b></li>
+							<li>Puedes trabaja <b>solo o colaborando</b></li>
+							<li>¡Los proyectos serán expuestos en nuestra web!</li>
 						</ul>
 					</p>
 				</section>
