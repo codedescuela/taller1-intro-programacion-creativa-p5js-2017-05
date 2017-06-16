@@ -1,29 +1,39 @@
-var alto = 130;
-var ancho = 200;
-var colorRect;
+//Ejemplo 5.1 Objetos
+//Coded Escuela - 2017
+
+var x;
+var y;
+var rad;
+var colorCirc;
+var vel;
 
 function setup(){
   createCanvas(800,500);
-  background(255,150,0,200);
+
+  x = width/2;
+  y = height/2;
+  rad = 30;
+  vel = 2;
+
+  colorCirc = color(random(0,255), random(0,255), random(0,255), 180);
 }
 
 function draw(){
-  checkInside();
-  updateRect();
+  frameRate(45);
+  background(220,220,255);
+
+  update();
+  mover();
+
 }
 
-function checkInside(){ //Revisa si el cursor está dentro o fuera del rectángulo
-  if(mouseX > width/2 - ancho/2 && mouseX < width/2 + ancho/2 && mouseY < height/2 + alto/2 &&  mouseY > height/2 - alto/2 ){
-    colorRect = color(0);
-  }
-  else {
-    colorRect = color(100,100,180);
-  }
-}
-
-function updateRect(){ //Actualiza el rectángulo en cada ciclo
+function update(){
   noStroke();
-  fill(colorRect);
-  rectMode(CENTER);
-  rect(width/2,height/2,ancho,alto);
+  fill(colorCirc);
+  ellipse(x,y,2*rad,2*rad);
+}
+
+function mover(){
+  x += random(-vel, vel);
+  y += random(-vel, vel);
 }

@@ -76,7 +76,7 @@
 					<p>
 						<ul style="float:left;">
 							<li>Son colecciones de <b>variables (propiedades)</b> y <b>funciones (métodos)</b> que se relacionan entre ellas</li>
-							<li>Permiten representar abstracciones del mundo real, por ejemplo una <b>radio</b></li>
+							<li>Permiten representar abstracciones del mundo real</li>
 						</ul>
 					</p>
 				</section>
@@ -112,25 +112,304 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Objetos: Función constructora</h6>
+						<h6 style="text-align:left;">Objetos (5.1)</h6>
 					</p>
-					<p style="text-align:left">
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							//Ejemplo 5.1 Objetos
+							//Coded Escuela - 2017
+
+							var x;
+							var y;
+							var rad;
+							var colorCirc;
+							var vel;
+
+							function setup(){
+							  createCanvas(800,500);
+
+							  x = width/2;
+							  y = height/2;
+							  rad = 30;
+							  vel = 2;
+
+							  colorCirc = color(random(0,255), random(0,255), random(0,255), 180);
+							}
+
+							function draw(){
+							  frameRate(45);
+							  background(220,220,255);
+
+							  update();
+							  mover();
+
+							}
+
+							function update(){
+							  noStroke();
+							  fill(colorCirc);
+							  ellipse(x,y,2*rad,2*rad);
+							}
+
+							function mover(){
+							  x += random(-vel, vel);
+							  y += random(-vel, vel);
+							}
+						</code>
+					</pre>
+					<p>
 						<ul style="float:left;">
-							<li>Buscar un ejemplo para poder enseñar objeto. Pueden ser los círculos del fondo de pantalla</li>
-							<li>Usar el ejemplo para incorporar métodos y propiedades</li>
-							<li>Desarrollar ejemplo no tan complejo</li>
+							<li>Partamos del ejemplo de una círculo</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Arreglos de objetos</h6>
+						<h6 style="text-align:left;">Objetos: de Círculo a Objeto Círculo</h6>
 					</p>
 					<p style="text-align:left">
 						<ul style="float:left;">
-							<li>A partir del ejemplo llegar a algo que use arreglos. Usar ejemplo de fondo web</li>
+							<li>La círculo tiene ciertas propiedades que lo caracterizan: </li>
+							<ul>
+								<li><code>x, y, rad, vel, colorCirc</code></li>
+							</ul>
+							<li>y ciertos métodos que generan su movimiento</li>
+							<ul>
+								<li><code>function update()</code></li>
+								<li><code>function mover()</code></li>
+							</ul>
 						</ul>
 					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">De Círculo a Objeto Círculo: Constructor</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							function Circulo(){
+							  //Propiedades
+
+							  //Metodos
+
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>El constructor <code>Circulo()</code> contiene todas las propiedades y metodos del objeto Circulo</li>
+							<li>Se define al final del código, fuera de la función <code>draw()</code></li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">De Círculo a Objeto Círculo: Propiedades</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							function Circulo(x,y,radio,colorInterior,velocidad) {
+							  //Propiedades
+							  this.x = x;
+							  this.y = y;
+							  this.rad = radio;
+							  this.colorCirc = colorInterior;
+							  this.vel = velocidad;
+
+							  //Metodos
+
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>Define las propiedades usando <code>this.varName</code></li>
+							<li>Asigna los valores con una variable de paso: <code>this.rad = radio;</code></li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">De Círculo a Objeto Círculo: Métodos</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							function Circulo(x,y,radio,colorInterior,velocidad) {
+							  //Propiedades
+							  this.x = x;
+							  this.y = y;
+							  this.rad = radio;
+							  this.colorCirc = colorInterior;
+							  this.vel = velocidad;
+
+							  //Metodos
+							  this.update = function(){
+							    noStroke();
+							    fill(this.colorCirc);
+							    ellipse(this.x,this.y,2*this.rad,2*this.rad);
+							  }
+
+							  this.mover = function(){
+							    this.x += random(-this.vel, this.vel);
+							    this.y += random(-this.vel, this.vel);
+							  }
+
+							}
+						</code>
+					</pre>
+					<p>
+						<ul style="float:left;">
+							<li>Declara los métodos como funciones</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">De Círculo a Objeto Círculo: Nuevo Objeto</h6>
+					</p>
+					<p>
+						<ul style="float:left;">
+							<li>Para crear un nuevo círculo debemos declarar una variable que contenga la nueva instancia del Objeto Círculo</li>
+							<ul>
+								<li><code>var circulo;</code></li>
+							</ul>
+							<li>Creamos el nuevo círculo usando la palabra clave <code>new</code> y entregando los argumentos definidos en el constructor</li>
+							<ul>
+								<li><code>circulo = new Circulo();</code></li>
+							</ul>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">De Círculo a Objeto Círculo (5.2)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							//Ejemplo 5.2 Objetos
+							//Coded Escuela - 2017
+
+							//Circulo
+							var circulo;
+
+							function setup(){
+							  createCanvas(800,500);
+							  circulo = new Circulo(width/2,height/2,30,color(random(0,255), random(0,255), random(0,255), 180),2);
+							}
+
+							function draw(){
+							  frameRate(45);
+							  background(220,220,255);
+
+							  circulo.update();
+							  circulo.mover();
+
+							}
+
+							function Circulo(x,y,rad,colorCirc,vel) {
+							  //Propiedades
+							  this.x = x;
+							  this.y = y;
+							  this.rad = rad;
+							  this.colorCirc = colorCirc;
+							  this.vel = vel;
+
+							  //Metodos
+							  this.update = function(){
+							    noStroke();
+							    fill(this.colorCirc);
+							    ellipse(this.x,this.y,2*this.rad,2*this.rad);
+							  }
+
+							  this.mover = function(){
+							    this.x += random(-this.vel, this.vel);
+							    this.y += random(-this.vel, this.vel);
+							  }
+
+							}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Arreglos de Objetos</h6>
+					</p>
+					<p style="text-align:left">
+						<ul style="float:left;">
+							<li>Podemos utilizar un solo constructor para crear muchos Objetos similares</li>
+							<li>Por ejemplo, muchos círculos de distinos tamaños y colores que se muevan a velocidades similares</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Arreglos de Objetos</h6>
+					</p>
+					<p style="text-align:left">
+						<ul style="float:left;">
+							<li>En vez de usar una variable que contenga el Objeto, utilizaremos un arreglo que contenga muchos objetos</li>
+							<li>Para llenar el arreglo con los objetos y ejecutar los métodos de cada círculo debemos usar un <code>for()</code></li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<p>
+						<h6 style="text-align:left;">Arreglo de Objetos (5.3)</h6>
+					</p>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+							//Ejemplo 5.3 Objetos
+							//Coded Escuela - 2017
+
+							//Circulo
+							var circulos = [];
+
+							//Numero circulos
+							numCirc = 80;
+
+							function setup(){
+							  createCanvas(800,500);
+
+							  for (var i = 0; i < numCirc; i++) {
+							    circulos[i] = new Circulo(random(0,width),random(0,height),random(20,30),color(random(0,255), random(0,255), random(0,255), 180),2);
+							  }
+							}
+
+							function draw(){
+							  frameRate(45);
+							  background(220,220,255);
+
+							  for (var i = 0; i < numCirc; i++) {
+							    circulos[i].update();
+							    circulos[i].mover();
+							  }
+
+							}
+
+							function Circulo(x,y,rad,colorCirc,vel) {
+							  //Propiedades
+							  this.x = x;
+							  this.y = y;
+							  this.rad = rad;
+							  this.colorCirc = colorCirc;
+							  this.vel = vel;
+
+							  //Metodos
+							  this.update = function(){
+							    noStroke();
+							    fill(this.colorCirc);
+							    ellipse(this.x,this.y,2*this.rad,2*this.rad);
+							  }
+
+							  this.mover = function(){
+							    this.x += random(-this.vel, this.vel);
+							    this.y += random(-this.vel, this.vel);
+
+							  }
+
+							}
+						</code>
+					</pre>
 				</section>
 				<section>
 					<p>
@@ -139,21 +418,6 @@
 					<p style="text-align:left">
 						<ul style="float:left;">
 							<li>Aquí enseñar algunas estrategias para abordar un problema</li>
-						</ul>
-					</p>
-				</section>
-				<section>
-					<p>
-						<h6 style="text-align:left;">Objetos</h6>
-					</p>
-					<pre>
-						<code class="hljs" data-trim contenteditable>
-
-						</code>
-					</pre>
-					<p>
-						<ul style="float:left;">
-							<li>Podemos reorganizar el ejemplo 3.7</li>
 						</ul>
 					</p>
 				</section>
