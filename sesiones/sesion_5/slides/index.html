@@ -1,47 +1,51 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>introducción a p5.js - sesión 5</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white_lower.css" id="theme">
+  <title>introducción a p5.js - sesión 5</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/white_lower.css" id="theme">
 
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<!--- Enlaces highlights.js para utilizar bibliteca para imprimir códigos. usar <pre><code>...</pre></code> --->
-		<link rel="stylesheet" href="/path/to/styles/default.css">
-		<script src="/path/to/highlight.pack.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
-		<!--- FIN Enlaces biblioteca highlights.js --->
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
 
-		<!-- COMIENZO PRESENTACIÓN -->
-		<div class="reveal">
-			<div class="slides">
-				<!-- PORTADA TEMPLATE -->
-				<section data-markdown>
-					<script type="text/template">
-					  <h2>Introducción a la programación creativa en p5.js</h2>
-						<br>
-						<h3>Sesión 5</h3>
-						<p>
-							<a href="http://codedescuela.cl/">Coded Escuela</a><br>
-							<small>Versión 0.0.1 por <a href="https://github.com/gamontec">Guillermo Montecinos</a><small>
+<body>
+  <!--- Enlaces highlights.js para utilizar bibliteca para imprimir códigos. usar <pre><code>...</pre></code> --->
+  <link rel="stylesheet" href="/path/to/styles/default.css">
+  <script src="/path/to/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <!--- FIN Enlaces biblioteca highlights.js --->
+
+  <!-- COMIENZO PRESENTACIÓN -->
+  <div class="reveal">
+    <div class="slides">
+      <!-- PORTADA TEMPLATE -->
+      <section data-markdown>
+        <script type="text/template">
+          <h2>Introducción a la programación creativa en p5.js</h2>
+          <br>
+          <h3>Sesión 5</h3>
+          <p>
+            <a href="http://codedescuela.cl/">Coded Escuela</a><br>
+            <small>Versión 0.0.1 por <a href="https://github.com/gamontec">Guillermo Montecinos</a><small>
 						</p>
 					</script>
 				</section>
@@ -53,7 +57,7 @@
 						<ul style="float:left;">
 							<li>Proyecto</li>
 							<li>Objetos</li>
-							<li>Buenas Práctias en Programación</li>
+							<li>Buenos modales en programación</li>
 						</ul>
 					</p>
 				</section>
@@ -63,9 +67,9 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Cuéntanos de qué se trata tu proyecto</li>
-							<li>A qué quieres llegar?</li>
-							<li>Cómo quieres desarrollaro?</li>
+							<li>¿De qué se trata?</li>
+							<li>¿Cuál es tu meta?</li>
+							<li>¿Cómo lo realizarás?</li>
 						</ul>
 					</p>
 				</section>
@@ -75,8 +79,8 @@
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Son colecciones de <b>variables (propiedades)</b> y <b>funciones (métodos)</b> que se relacionan entre ellas</li>
-							<li>Permiten representar abstracciones del mundo real</li>
+							<li>Colección de <b>variables</b> y <b>funciones</b> relacionadas</li>
+							<li>Permiten hacer modelos y abstracciones</li>
 						</ul>
 					</p>
 				</section>
@@ -85,28 +89,27 @@
 						<h6 style="text-align:left;">Objetos</h6>
 					</p>
 					<p style="text-align:left">
-						Por ejemplo una <b>radio</b>:
+					Ejemplo: radio:
 						<ul style="float:left;">
-							<li>Propiedades</li>
+							<li>Variables (propiedades)</li>
 							<ul>
-								<li><code>volumen</code>, <code>frecuencia</code>, <code>banda</code> (AM, FM), <code>encendido/apagado</code></li>
+								<li><code>volumen</code>, <code>frecuencia</code>, <code>banda</code> (AM, FM), <code>estado(encendido/apagado</code>)</li>
 							</ul>
 							<li>Métodos</li>
 							<ul>
-								<li><code>fijarVolumen</code>, <code>fijarFrecuencia</code>, <code>fijarBanda</code>, <code>encenderApagar</code></li>
+								<li><code>fijarVolumen</code>, <code>fijarFrecuencia</code>, <code>fijarBanda</code>, <code>fijarEstado</code></li>
 							</ul>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Objetos: Función constructora</h6>
+						<h6 style="text-align:left;">Objetos: función constructor</h6>
 					</p>
 					<p style="text-align:left">
 						<ul style="float:left;">
-							<li>Para declarar un objeto primero debemos definir el <b>Constructor</b></li>
-							<li>Es una función que define la <b>estructura del objeto</b></li>
-							<li>Es como el plano de una casa: se pueden construir muchas casas con un plano pero no todas son idénticas</li>
+              <li>Función que define la <b>estructura del objeto</b></li>
+              <li>Analogías: molde de galletas, plano de construcción</li>
 						</ul>
 					</p>
 				</section>
@@ -133,6 +136,7 @@
 							  rad = 30;
 							  vel = 2;
 
+                //color aleatorio
 							  colorCirc = color(random(0,255), random(0,255), random(0,255), 180);
 							}
 
@@ -140,12 +144,12 @@
 							  frameRate(45);
 							  background(220,220,255);
 
-							  update();
+							  actualizar();
 							  mover();
 
 							}
 
-							function update(){
+							function actualizar(){
 							  noStroke();
 							  fill(colorCirc);
 							  ellipse(x,y,2*rad,2*rad);
@@ -159,23 +163,23 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>Partamos del ejemplo de una círculo</li>
+							<li>¡Creemos un objeto Círculo que se pueda mover!</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Objetos: de Círculo a Objeto Círculo</h6>
+						<h6 style="text-align:left;">Objetos: nuestro primer objeto Círculo</h6>
 					</p>
 					<p style="text-align:left">
 						<ul style="float:left;">
-							<li>La círculo tiene ciertas propiedades que lo caracterizan: </li>
+							<li>El objeto Círculo tiene las siguientes propiedades:</li>
 							<ul>
 								<li><code>x, y, rad, vel, colorCirc</code></li>
 							</ul>
-							<li>y ciertos métodos que generan su movimiento</li>
+							<li>y los siguientes métodos para cambiar su estado:</li>
 							<ul>
-								<li><code>function update()</code></li>
+								<li><code>function actualizar()</code></li>
 								<li><code>function mover()</code></li>
 							</ul>
 						</ul>
@@ -183,7 +187,7 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">De Círculo a Objeto Círculo: Constructor</h6>
+						<h6 style="text-align:left;">Objeto Círculo: constructor</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -198,13 +202,13 @@
 					<p>
 						<ul style="float:left;">
 							<li>El constructor <code>Circulo()</code> contiene todas las propiedades y metodos del objeto Circulo</li>
-							<li>Se define al final del código, fuera de la función <code>draw()</code></li>
+							<li>Se declara fuera de las funciones <code>setup()</code> <code>draw()</code></li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">De Círculo a Objeto Círculo: Propiedades</h6>
+						<h6 style="text-align:left;">Objeto Círculo: propiedades</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -223,14 +227,14 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>Define las propiedades usando <code>this.varName</code></li>
-							<li>Asigna los valores con una variable de paso: <code>this.rad = radio;</code></li>
+              <li>Parámetros: entre paréntesis</li>
+							<li>Propiedades: <code>this.nombreVar = valor</code></li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">De Círculo a Objeto Círculo: Métodos</h6>
+						<h6 style="text-align:left;">Objeto Círculo: métodos</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -243,7 +247,7 @@
 							  this.vel = velocidad;
 
 							  //Metodos
-							  this.update = function(){
+							  this.actualizar = function(){
 							    noStroke();
 							    fill(this.colorCirc);
 							    ellipse(this.x,this.y,2*this.rad,2*this.rad);
@@ -259,30 +263,30 @@
 					</pre>
 					<p>
 						<ul style="float:left;">
-							<li>Declara los métodos como funciones</li>
+							<li>Los metodos son funciones</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">De Círculo a Objeto Círculo: Nuevo Objeto</h6>
+						<h6 style="text-align:left;">Objeto Círculo: nuevo objeto</h6>
 					</p>
 					<p>
 						<ul style="float:left;">
-							<li>Para crear un nuevo círculo debemos declarar una variable que contenga la nueva instancia del Objeto Círculo</li>
+							<li>Crear variable para contener instancia del objeto</li>
 							<ul>
-								<li><code>var circulo;</code></li>
+								<li><code>var nuevoCirculo;</code></li>
 							</ul>
-							<li>Creamos el nuevo círculo usando la palabra clave <code>new</code> y entregando los argumentos definidos en el constructor</li>
+							<li>Invocar constructor con <code>new</code> y argumentos</li>
 							<ul>
-								<li><code>circulo = new Circulo();</code></li>
+								<li><code>circulo = new Circulo(...);</code></li>
 							</ul>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">De Círculo a Objeto Círculo (5.2)</h6>
+						<h6 style="text-align:left;">Objeto Círculo (5.2)</h6>
 					</p>
 					<pre>
 						<code class="hljs" data-trim contenteditable>
@@ -290,19 +294,19 @@
 							//Coded Escuela - 2017
 
 							//Circulo
-							var circulo;
+							var nuevoCirculo;
 
 							function setup(){
 							  createCanvas(800,500);
-							  circulo = new Circulo(width/2,height/2,30,color(random(0,255), random(0,255), random(0,255), 180),2);
+							  nuevoCirculo = new Circulo(width/2,height/2,30,color(random(0,255), random(0,255), random(0,255), 180),2);
 							}
 
 							function draw(){
 							  frameRate(45);
 							  background(220,220,255);
 
-							  circulo.update();
-							  circulo.mover();
+							  nuevoCirculo.actualizar();
+							  nuevoCirculo.mover();
 
 							}
 
@@ -315,7 +319,7 @@
 							  this.vel = vel;
 
 							  //Metodos
-							  this.update = function(){
+							  this.actualizar = function(){
 							    noStroke();
 							    fill(this.colorCirc);
 							    ellipse(this.x,this.y,2*this.rad,2*this.rad);
@@ -332,23 +336,23 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Arreglos de Objetos</h6>
+						<h6 style="text-align:left;">Arreglos de objetos</h6>
 					</p>
 					<p style="text-align:left">
 						<ul style="float:left;">
-							<li>Podemos utilizar un solo constructor para crear muchos Objetos similares</li>
-							<li>Por ejemplo, muchos círculos de distinos tamaños y colores que se muevan a velocidades similares</li>
+							<li>Constructores permiten crear objetos similares</li>
+							<li>Ejemplo: nuestros círculos parecidos pero distintos</li>
 						</ul>
 					</p>
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Arreglos de Objetos</h6>
+						<h6 style="text-align:left;">Arreglos de objetos</h6>
 					</p>
 					<p style="text-align:left">
 						<ul style="float:left;">
-							<li>En vez de usar una variable que contenga el Objeto, utilizaremos un arreglo que contenga muchos objetos</li>
-							<li>Para llenar el arreglo con los objetos y ejecutar los métodos de cada círculo debemos usar un <code>for()</code></li>
+							<li>Para ordenar nuestros objetos, usaremos arreglos</li>
+							<li>Para poblar el arreglo con objetos usaremos <code>for()</code></li>
 						</ul>
 					</p>
 				</section>
@@ -380,7 +384,7 @@
 							  background(220,220,255);
 
 							  for (var i = 0; i < numCirc; i++) {
-							    circulos[i].update();
+							    circulos[i].actualizar();
 							    circulos[i].mover();
 							  }
 
@@ -395,7 +399,7 @@
 							  this.vel = vel;
 
 							  //Metodos
-							  this.update = function(){
+							  this.actualizar = function(){
 							    noStroke();
 							    fill(this.colorCirc);
 							    ellipse(this.x,this.y,2*this.rad,2*this.rad);
@@ -413,11 +417,16 @@
 				</section>
 				<section>
 					<p>
-						<h6 style="text-align:left;">Buenas prácticas en programación (Aarón)</h6>
+						<h6 style="text-align:left;">Buenos modales en en programación</h6>
 					</p>
 					<p style="text-align:left">
 						<ul style="float:left;">
-							<li>Aquí enseñar algunas estrategias para abordar un problema</li>
+              <li>Respaldar el trabajo</li>
+              <li>Comentar todo</li>
+							<li>Nombres informativos: radio > r, posX > x</li>
+              <li>camelCase</li>
+              <li>No copiar y pegar</li>
+              <li>Encapsular y parametrizar</li>
 						</ul>
 					</p>
 				</section>
